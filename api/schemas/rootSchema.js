@@ -1,16 +1,17 @@
+const { v4: uuidv4 } = require("uuid");
 const {
   GraphQLSchema,
   GraphQLObjectType,
   GraphQLList,
   GraphQLID,
-  GraphQLInt,
   GraphQLString,
+  GraphQLInt,
+  GraphQLNonNull,
 } = require("graphql");
-const { UserType, fakeUsers: users } = require("../features/users");
 const { PostType, fakePosts: posts } = require("../features/posts");
 
 const RootQueryType = new GraphQLObjectType({
-  name: "Root",
+  name: "RootQuery",
   fields: () => ({
     getAllPosts: {
       type: new GraphQLList(PostType),
@@ -24,7 +25,29 @@ const RootQueryType = new GraphQLObjectType({
         id: { type: GraphQLID },
       },
       resolve(_, { id }) {
-        return posts.find((post) => post.id === Number(id));
+        return posts.find((post) => String(post.id) === id);
+      },
+    },
+  }),
+});
+
+const RootMutationType = new GraphQLObjectType({
+  name: "RootMutation",
+  fields: () => ({
+    addPost: {
+      type: PostType,
+      args: {
+        userId: { type: GraphQLNonNull(GraphQLInt) },
+        title: { type: GraphQLNonNull(GraphQLString) },
+        body: { type: GraphQLNonNull(GraphQLString) },
+      },
+      resolve(_, args) {
+        const newPost = {
+          id: uuidv4(),
+          ...args,
+        };
+        posts.push(newPost);
+        return newPost;
       },
     },
   }),
@@ -32,4 +55,5 @@ const RootQueryType = new GraphQLObjectType({
 
 module.exports = new GraphQLSchema({
   query: RootQueryType,
+  mutation: RootMutationType,
 });

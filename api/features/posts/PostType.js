@@ -16,7 +16,7 @@ const PostType = new GraphQLObjectType({
     user: {
       type: UserType,
       resolve(parent) {
-        return users.find((user) => user.id === parent.userId);
+        return users.find((user) => String(user.id) === String(parent.userId));
       },
     },
   }),

@@ -1,10 +1,11 @@
-require("dotenv").config();
+const dotenv = require("dotenv");
 const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schemas/rootSchema");
 //
-const port = process.env.PORT || 4000;
+dotenv.config();
 const app = express();
+const port = process.env.PORT || 4000;
 //
 app.use(
   "/api/graphql",
