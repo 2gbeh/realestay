@@ -6,24 +6,15 @@ const {
   GraphQLInt,
   GraphQLString,
 } = require("graphql");
-const posts = require("../data/fake-posts.json");
-
-const PostType = new GraphQLObjectType({
-  name: "Post",
-  fields: () => ({
-    id: { type: GraphQLID },
-    userId: { type: GraphQLInt },
-    title: { type: GraphQLString },
-    body: { type: GraphQLString },
-  }),
-});
+const { UserType, fakeUsers: users } = require("../features/users");
+const { PostType, fakePosts: posts } = require("../features/posts");
 
 const RootQueryType = new GraphQLObjectType({
   name: "Root",
   fields: () => ({
     getAllPosts: {
       type: new GraphQLList(PostType),
-      resolve(parent, args) {
+      resolve() {
         return posts;
       },
     },
@@ -32,7 +23,7 @@ const RootQueryType = new GraphQLObjectType({
       args: {
         id: { type: GraphQLID },
       },
-      resolve(parent, { id }) {
+      resolve(_, { id }) {
         return posts.find((post) => post.id === Number(id));
       },
     },
