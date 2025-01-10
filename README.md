@@ -48,12 +48,12 @@ $ npm install
 
 TODO: Update .env credentials
 
-$ node server.js
+$ npm run dev
 ```
 
 ## Usage
 
-> Server: http://localhost:4000
+> Server: http://localhost:8000/api/graphql
 
 ## Documentation
 
@@ -61,6 +61,10 @@ Coming soon
 
 ## Screenshots
 
-<!-- ![Social Preview](./web/public/social-preview.png) -->
+<!-- ![Dashboard](./web/public/ui/dashboard.png) -->
 
 Coming soon
+
+## Resources
+
+- [GraphQL Crash Course w/MERN - Traversy Media](https://youtu.be/BcLNfwF04Kw?si=qgy1hWF7e7wPUA_I)
