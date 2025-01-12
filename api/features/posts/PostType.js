@@ -22,4 +22,15 @@ const PostType = new GraphQLObjectType({
   }),
 });
 
-module.exports = PostType;
+const UpdatePostDto = new GraphQLObjectType({
+  name: "UpdatePostDto",
+  fields: () => ({
+    title: { type: GraphQLString },
+    body: { type: GraphQLString },
+  }),
+});
+
+module.exports = {
+  PostType,
+  UpdatePostDto,
+};

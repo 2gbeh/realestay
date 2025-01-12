@@ -1,7 +1,9 @@
+const fakeUsers = require("./fake-users.json");
 const UserType = require("./UserType");
-const fakeUsers = require("./data.json");
+const userRepository = require("./UserRepository");
 
 module.exports = {
-  UserType,
   fakeUsers,
+  UserType,
+  userRepository,
 };

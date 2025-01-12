@@ -1,7 +1,10 @@
-const PostType = require("./PostType");
-const fakePosts = require("./data.json");
+const fakePosts = require("./fake-posts.json");
+const { PostType, UpdatePostDto } = require("./PostType");
+const postRepository = require("./PostRepository");
 
 module.exports = {
-  PostType,
   fakePosts,
+  PostType,
+  UpdatePostDto,
+  postRepository,
 };

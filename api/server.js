@@ -14,4 +14,4 @@ app.use(
     graphiql: process.env.NODE_ENV === "development",
   })
 );
-app.listen(port, console.log("🚀 ~ server ~ port:", port));
+app.listen(port, console.log(`- Local:        http://localhost:${port}/api/graphql`));

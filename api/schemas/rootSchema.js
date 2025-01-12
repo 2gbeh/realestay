@@ -1,4 +1,3 @@
-const { v4: uuidv4 } = require("uuid");
 const {
   GraphQLSchema,
   GraphQLObjectType,
@@ -8,25 +7,25 @@ const {
   GraphQLInt,
   GraphQLNonNull,
 } = require("graphql");
-const { PostType, fakePosts: posts } = require("../features/posts");
+const {
+  PostType,
+  UpdatePostDto,
+  postRepository,
+} = require("../features/posts");
 
 const RootQueryType = new GraphQLObjectType({
   name: "RootQuery",
   fields: () => ({
     getAllPosts: {
       type: new GraphQLList(PostType),
-      resolve() {
-        return posts;
-      },
+      resolve: () => postRepository.getAll(),
     },
     getPostById: {
       type: PostType,
       args: {
-        id: { type: GraphQLID },
+        id: { type: GraphQLNonNull(GraphQLID) },
       },
-      resolve(_, { id }) {
-        return posts.find((post) => String(post.id) === id);
-      },
+      resolve: (_, { id }) => postRepository.getById(id),
     },
   }),
 });
@@ -34,21 +33,30 @@ const RootQueryType = new GraphQLObjectType({
 const RootMutationType = new GraphQLObjectType({
   name: "RootMutation",
   fields: () => ({
-    addPost: {
+    createPost: {
       type: PostType,
       args: {
         userId: { type: GraphQLNonNull(GraphQLInt) },
         title: { type: GraphQLNonNull(GraphQLString) },
         body: { type: GraphQLNonNull(GraphQLString) },
       },
-      resolve(_, args) {
-        const newPost = {
-          id: uuidv4(),
-          ...args,
-        };
-        posts.push(newPost);
-        return newPost;
+      resolve: (_, args) => postRepository.add(args),
+    },
+    updatePost: {
+      type: PostType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
+        title: { type: GraphQLString },
+        body: { type: GraphQLString },
       },
+      resolve: (_, { id, ...args }) => postRepository.edit(args, id),
+    },
+    deletePost: {
+      type: PostType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
+      },
+      resolve: (_, { id }) => postRepository.remove(id),
     },
   }),
 });
