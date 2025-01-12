@@ -53,7 +53,7 @@ $ npm run dev
 
 ## Usage
 
-> Server: http://localhost:8000/api/graphql
+> Server: http://localhost:8000/graphql
 
 ## Documentation
 
