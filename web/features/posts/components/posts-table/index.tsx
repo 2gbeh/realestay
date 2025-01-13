@@ -19,23 +19,29 @@ const PostsTable = () => {
     <p>Error : {error?.message}</p>
   ) : (
     <table>
-      <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Author</th>
-        <th>Actions</th>
-      </tr>
-      {data?.getAllPosts.map((post) => (
-        <tr key={post.id}>
-          <td>{post.title}</td>
-          <td>{post.body}</td>
-          <td>
-            <Link href="">- {post.user.username} (post.user.email)</Link>
-          </td>
-          <td></td>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Author</th>
+          <th>Actions</th>
         </tr>
-      ))}
+      </thead>
+      <tbody>
+        {data?.getAllPosts.map((post) => (
+          <tr key={post.id}>
+            <td>{post.title}</td>
+            <td>{post.body}</td>
+            <td>
+              <Link href="">
+                - {post.user.username} ({post.user.email})
+              </Link>
+            </td>
+            <td></td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };

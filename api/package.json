@@ -8,7 +8,7 @@
     "dev": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "https://github.com/2gbeh",
   "license": "ISC",
   "description": "",
   "dependencies": {
