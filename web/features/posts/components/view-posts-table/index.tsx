@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Trash2 } from "lucide-react";
 import { usePosts } from "../../hooks/usePosts";
 
 const ViewPostsTable = () => {
@@ -52,12 +53,7 @@ const ViewPostsTable = () => {
               <td>{post?.user?.name}</td>
               <td>{post.title}</td>
               <td>
-                <button
-                  className="btn btn-sm btn-danger"
-                  onClick={() => handleDelete(post.id)}
-                >
-                  Delete
-                </button>
+                <Trash2 color="red" size={16} onClick={() => handleDelete(post.id)} />
               </td>
             </tr>
           ))
