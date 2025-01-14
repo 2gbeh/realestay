@@ -4,20 +4,18 @@ const {
   GraphQLString,
   GraphQLInt,
 } = require("graphql");
-const { UserType, fakeUsers: users } = require("../users");
+const { UserType, userRepository } = require("../users");
 
 const PostType = new GraphQLObjectType({
   name: "Post",
   fields: () => ({
     id: { type: GraphQLID },
-    userId: { type: GraphQLInt },
     title: { type: GraphQLString },
     body: { type: GraphQLString },
+    userId: { type: GraphQLInt },
     user: {
       type: UserType,
-      resolve(parent) {
-        return users.find((user) => String(user.id) === String(parent.userId));
-      },
+      resolve: (parent) => userRepository.getById(parent.userId),
     },
   }),
 });

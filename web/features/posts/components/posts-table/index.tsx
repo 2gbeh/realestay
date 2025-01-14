@@ -1,44 +1,67 @@
 "use client";
 
-import React from "react";
+import React, { cache, useState } from "react";
 import Link from "next/link";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 //
-import { PostEntity } from "../../utils/post.interface";
-import { PostService } from "../../utils/post.service";
+import {
+  GetAllPostsType,
+  GET_ALL_POSTS,
+  DeletePostType,
+  DELETE_POST,
+} from "../../utils/posts.action";
 
 const PostsTable = () => {
-  const { loading, error, data } = useQuery<{ getAllPosts: PostEntity[] }>(
-    PostService.getAll()
+  const [selectedPostId, setSelectedPostId] = useState<null | number | string>(
+    null
   );
-  console.log("🚀 ~ PostsTable", loading, error, data);
+  const { data, ...getAllPostsState } =
+    useQuery<GetAllPostsType>(GET_ALL_POSTS);
+  const [deletePost, deletePostState] =
+    useMutation<DeletePostType>(DELETE_POST);
+  async function handleDelete(postId: string | number) {
+    setSelectedPostId(postId);
+    await deletePost({
+      variables: { id: postId },
+      refetchQueries: [GET_ALL_POSTS],
+    });
+  }
+  console.log("🚀 ~ PostsTable");
   // RENDERS
-  return loading ? (
+  return getAllPostsState.loading ? (
     <p>Loading...</p>
-  ) : error ? (
-    <p>Error : {error?.message}</p>
+  ) : getAllPostsState.error ? (
+    <p>Error : {getAllPostsState.error?.message}</p>
   ) : (
     <table>
       <thead>
         <tr>
           <th>#</th>
+          <th>Author</th>
           <th>Title</th>
           <th>Body</th>
-          <th>Author</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        {data?.getAllPosts.map((post) => (
-          <tr key={post.id}>
+        {data?.getAllPosts.map((post, i) => (
+          <tr
+            key={post.id}
+            className="transition"
+            style={{
+              backgroundColor:
+                deletePostState.loading && selectedPostId == post.id
+                  ? "#ffc"
+                  : "inherit",
+            }}
+          >
+            <td>{i + 1}</td>
+            <td>{post?.user?.name}</td>
             <td>{post.title}</td>
             <td>{post.body}</td>
             <td>
-              <Link href="">
-                - {post.user.username} ({post.user.email})
-              </Link>
+              <button onClick={() => handleDelete(post.id)}>Delete</button>
             </td>
-            <td></td>
           </tr>
         ))}
       </tbody>

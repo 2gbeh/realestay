@@ -7,61 +7,55 @@ const {
   GraphQLInt,
   GraphQLNonNull,
 } = require("graphql");
-const {
-  PostType,
-  UpdatePostDto,
-  postRepository,
-} = require("../features/posts");
+const { PostType, postRepository } = require("../features/posts");
 
-const RootQueryType = new GraphQLObjectType({
-  name: "RootQuery",
-  fields: () => ({
-    getAllPosts: {
-      type: new GraphQLList(PostType),
-      resolve: () => postRepository.getAll(),
-    },
-    getPostById: {
-      type: PostType,
-      args: {
-        id: { type: GraphQLNonNull(GraphQLID) },
+const rootSchema = {
+  query: new GraphQLObjectType({
+    name: "RootQuery",
+    fields: () => ({
+      getAllPosts: {
+        type: new GraphQLList(PostType),
+        resolve: () => postRepository.getAll(),
       },
-      resolve: (_, { id }) => postRepository.getById(id),
-    },
+      getPostById: {
+        type: PostType,
+        args: {
+          id: { type: GraphQLNonNull(GraphQLID) },
+        },
+        resolve: (_, { id }) => postRepository.getById(id),
+      },
+    }),
   }),
-});
-
-const RootMutationType = new GraphQLObjectType({
-  name: "RootMutation",
-  fields: () => ({
-    createPost: {
-      type: PostType,
-      args: {
-        userId: { type: GraphQLNonNull(GraphQLInt) },
-        title: { type: GraphQLNonNull(GraphQLString) },
-        body: { type: GraphQLNonNull(GraphQLString) },
+  mutation: new GraphQLObjectType({
+    name: "RootMutation",
+    fields: () => ({
+      createPost: {
+        type: PostType,
+        args: {
+          userId: { type: GraphQLNonNull(GraphQLInt) },
+          title: { type: GraphQLNonNull(GraphQLString) },
+          body: { type: GraphQLNonNull(GraphQLString) },
+        },
+        resolve: (_, args) => postRepository.add(args),
       },
-      resolve: (_, args) => postRepository.add(args),
-    },
-    updatePost: {
-      type: PostType,
-      args: {
-        id: { type: GraphQLNonNull(GraphQLID) },
-        title: { type: GraphQLString },
-        body: { type: GraphQLString },
+      updatePost: {
+        type: PostType,
+        args: {
+          id: { type: GraphQLNonNull(GraphQLID) },
+          title: { type: GraphQLString },
+          body: { type: GraphQLString },
+        },
+        resolve: (_, { id, ...args }) => postRepository.edit(args, id),
       },
-      resolve: (_, { id, ...args }) => postRepository.edit(args, id),
-    },
-    deletePost: {
-      type: PostType,
-      args: {
-        id: { type: GraphQLNonNull(GraphQLID) },
+      deletePost: {
+        type: PostType,
+        args: {
+          id: { type: GraphQLNonNull(GraphQLID) },
+        },
+        resolve: (_, { id }) => postRepository.remove(id),
       },
-      resolve: (_, { id }) => postRepository.remove(id),
-    },
+    }),
   }),
-});
+};
 
-module.exports = new GraphQLSchema({
-  query: RootQueryType,
-  mutation: RootMutationType,
-});
+module.exports = new GraphQLSchema(rootSchema);
