@@ -1,27 +1,10 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
-//
-import {
-  GET_ALL_POSTS,
-  CreatePostType,
-  CREATE_POST,
-} from "../../utils/posts.action";
+import React from "react";
+import { usePosts } from "../../hooks/usePosts";
 
 const AddPostForm = () => {
-  const [createPost, createPostState] =
-    useMutation<CreatePostType>(CREATE_POST);
-  async function handleCreate(ev: FormEvent<HTMLFormElement>) {
-    ev.preventDefault();
-    const formData = new FormData(ev.currentTarget);
-    const variables = Object.fromEntries(formData.entries());
-    // console.log("🚀 ~ handleCreate ~ variables:", variables);
-    await createPost({
-      variables,
-      refetchQueries: [GET_ALL_POSTS],
-    });
-  }
+  const { createPostState, handleCreate } = usePosts();
   console.log("🚀 ~ AddPostForm");
   // RENDERS
   return (

@@ -1,35 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
-//
-import {
-  GetAllPostsType,
-  GET_ALL_POSTS,
-  DeletePostType,
-  DELETE_POST,
-} from "../../utils/posts.action";
+import React from "react";
+import { usePosts } from "../../hooks/usePosts";
 
 const ViewPostsTable = () => {
-  const [selectedPostId, setSelectedPostId] = useState<null | number | string>(
-    null
-  );
-  const { data, ...getAllPostsState } =
-    useQuery<GetAllPostsType>(GET_ALL_POSTS);
-  const [deletePost, deletePostState] =
-    useMutation<DeletePostType>(DELETE_POST);
-  async function handleDelete(postId: string | number) {
-    setSelectedPostId(postId);
-    await deletePost({
-      variables: { id: postId },
-      refetchQueries: [GET_ALL_POSTS],
-    });
-  }
+  const {
+    posts,
+    selectedPostId,
+    getAllPostsState,
+    deletePostState,
+    handleDelete,
+  } = usePosts();
   console.log("🚀 ~ ViewPostsTable");
   // RENDERS
   return (
     <table>
-      <caption>Showing {data?.getAllPosts.length || 0} total records</caption>
+      <caption>Showing {posts.length} total records</caption>
       <thead>
         <tr>
           <th>#</th>
@@ -52,7 +38,7 @@ const ViewPostsTable = () => {
             </td>
           </tr>
         ) : (
-          data?.getAllPosts.map((post, i) => (
+          posts.map((post, i) => (
             <tr
               key={post.id}
               style={{
