@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 //
-import { PostsTable } from "@/features/posts";
+import { AddPostForm, ViewPostsTable } from "@/features/posts";
 
 export const metadata: Metadata = {
   title: "All Posts | pinksl.ip",
@@ -8,5 +8,14 @@ export const metadata: Metadata = {
 
 export default function Posts() {
   // RENDERS
-  return <PostsTable />;
+  return (
+    <main>
+      <section>
+        <AddPostForm />
+      </section>
+      <section>
+        <ViewPostsTable />
+      </section>
+    </main>
+  );
 }

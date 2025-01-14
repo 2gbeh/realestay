@@ -11,7 +11,7 @@ import {
   DELETE_POST,
 } from "../../utils/posts.action";
 
-const PostsTable = () => {
+const ViewPostsTable = () => {
   const [selectedPostId, setSelectedPostId] = useState<null | number | string>(
     null
   );
@@ -26,7 +26,7 @@ const PostsTable = () => {
       refetchQueries: [GET_ALL_POSTS],
     });
   }
-  console.log("🚀 ~ PostsTable");
+  console.log("🚀 ~ ViewPostsTable");
   // RENDERS
   return getAllPostsState.loading ? (
     <p>Loading...</p>
@@ -39,7 +39,6 @@ const PostsTable = () => {
           <th>#</th>
           <th>Author</th>
           <th>Title</th>
-          <th>Body</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -47,20 +46,18 @@ const PostsTable = () => {
         {data?.getAllPosts.map((post, i) => (
           <tr
             key={post.id}
-            className="transition"
             style={{
-              backgroundColor:
+              color:
                 deletePostState.loading && selectedPostId == post.id
-                  ? "#ffc"
+                  ? "red"
                   : "inherit",
             }}
           >
             <td>{i + 1}</td>
             <td>{post?.user?.name}</td>
             <td>{post.title}</td>
-            <td>{post.body}</td>
             <td>
-              <button onClick={() => handleDelete(post.id)}>Delete</button>
+              <button className="btn btn-sm btn-danger" onClick={() => handleDelete(post.id)}>Delete</button>
             </td>
           </tr>
         ))}
@@ -69,4 +66,4 @@ const PostsTable = () => {
   );
 };
 
-export default React.memo(PostsTable);
+export default React.memo(ViewPostsTable);
