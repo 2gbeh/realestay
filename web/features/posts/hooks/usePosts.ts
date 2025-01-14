@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 //
+import { PROTOTYPE as P } from "@/constants/PROTOTYPE";
 import {
   GetAllPostsType,
   GET_ALL_POSTS,
@@ -11,14 +12,13 @@ import {
   DeletePostType,
   DELETE_POST,
 } from "../utils/posts.action";
+import { POST } from "../utils/posts.constant";
 
 type SelectedPostId = number | string;
 
-const initialValues = {
-  userId: "2",
-  title: "New post title",
-  body: "New post body",
-};
+const initialValues = P.createPost.formData
+  ? POST.mockValues
+  : POST.defaultValues;
 
 export function usePosts() {
   const [formData, setFormData] = useState(initialValues);
@@ -33,6 +33,7 @@ export function usePosts() {
   );
   const posts = getAllPostsData?.getAllPosts.toReversed() || [];
   //
+  const resetFormData = () => setFormData(POST.defaultValues);
   const updateFormData = (name: keyof typeof initialValues, value: string) =>
     setFormData((prev) => ({ ...prev, [name]: value }));
   async function handleCreate() {
@@ -41,11 +42,7 @@ export function usePosts() {
         variables: formData,
         refetchQueries: [GET_ALL_POSTS],
       });
-      setFormData({
-        userId: "",
-        title: "",
-        body: "",
-      });
+      resetFormData();
     } catch (err) {
       // do absolutely nothing
     }

@@ -46,8 +46,8 @@ const AddPostForm = () => {
           <label htmlFor="body">Message</label>
           <textarea
             id="body"
-            value={formData.title}
-            onChange={(ev) => updateFormData("title", ev.target.value)}
+            value={formData.body}
+            onChange={(ev) => updateFormData("body", ev.target.value)}
             required
           />
         </div>
