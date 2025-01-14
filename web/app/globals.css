@@ -62,7 +62,7 @@ caption {
 
 tr {
   border-bottom: solid thin #222;
-  vertical-align: top;
+  /* vertical-align: top; */
 }
 
 th {

@@ -53,7 +53,12 @@ const ViewPostsTable = () => {
               <td>{post?.user?.name}</td>
               <td>{post.title}</td>
               <td>
-                <Trash2 color="red" size={16} onClick={() => handleDelete(post.id)} />
+                <Trash2
+                  color="red"
+                  size={16}
+                  onClick={() => handleDelete(post.id)}
+                  style={{ cursor: "pointer" }}
+                />
               </td>
             </tr>
           ))
