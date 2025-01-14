@@ -14,12 +14,14 @@ import {
 
 type SelectedPostId = number | string;
 
+const initialValues = {
+  userId: "2",
+  title: "New post title",
+  body: "New post body",
+};
+
 export function usePosts() {
-  const [defaultValues, setDefaultValues] = useState({
-    userId: "2",
-    title: "New post title",
-    body: "New post body",
-  });
+  const [formData, setFormData] = useState(initialValues);
   const { data: getAllPostsData, ...getAllPostsState } =
     useQuery<GetAllPostsType>(GET_ALL_POSTS);
   const [createPost, createPostState] =
@@ -29,19 +31,17 @@ export function usePosts() {
   const [selectedPostId, setSelectedPostId] = useState<SelectedPostId | null>(
     null
   );
-  const posts = getAllPostsData?.getAllPosts || [];
+  const posts = getAllPostsData?.getAllPosts.toReversed() || [];
   //
-  async function handleCreate(ev: FormEvent<HTMLFormElement>) {
-    ev.preventDefault();
-    const formData = new FormData(ev.currentTarget);
-    const variables = Object.fromEntries(formData.entries());
-    // console.log("🚀 ~ handleCreate ~ variables:", variables);
+  const updateFormData = (name: keyof typeof initialValues, value: string) =>
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  async function handleCreate() {
     try {
       await createPost({
-        variables,
+        variables: formData,
         refetchQueries: [GET_ALL_POSTS],
       });
-      setDefaultValues({
+      setFormData({
         userId: "",
         title: "",
         body: "",
@@ -64,7 +64,8 @@ export function usePosts() {
   return {
     posts,
     selectedPostId,
-    defaultValues,
+    formData,
+    updateFormData,
     getAllPostsState,
     createPostState,
     deletePostState,

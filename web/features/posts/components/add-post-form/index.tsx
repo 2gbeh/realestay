@@ -6,20 +6,22 @@ import { usePosts } from "../../hooks/usePosts";
 
 const AddPostForm = () => {
   const { users, getAllUsersState } = useUsers();
-  const { defaultValues, createPostState, handleCreate } = usePosts();
+  const { formData, updateFormData, createPostState, handleCreate } =
+    usePosts();
   console.log("🚀 ~ AddPostForm");
   // RENDERS
   return (
-    <form onSubmit={handleCreate}>
+    <form>
       <fieldset disabled={createPostState.loading}>
         <div className="flex-box">
           <div className="flex-item">
             <label htmlFor="userId">Author</label>
             <select
-              name="userId"
-              defaultValue={defaultValues.userId}
-              required
+              id="userId"
+              value={formData.userId}
+              onChange={(ev) => updateFormData("userId", ev.target.value)}
               disabled={getAllUsersState.loading}
+              required
             >
               <option value=""></option>
               {users.map(({ id, name }) => (
@@ -33,18 +35,29 @@ const AddPostForm = () => {
             <label htmlFor="title">Title</label>
             <input
               type="text"
-              name="title"
-              defaultValue={defaultValues.title}
+              id="title"
+              value={formData.title}
+              onChange={(ev) => updateFormData("title", ev.target.value)}
               required
             />
           </div>
         </div>
         <div className="flex-item">
           <label htmlFor="body">Message</label>
-          <textarea name="body" defaultValue={defaultValues.body} required />
+          <textarea
+            id="body"
+            value={formData.title}
+            onChange={(ev) => updateFormData("title", ev.target.value)}
+            required
+          />
         </div>
         <div style={{ marginTop: 20 }}>
-          <button className="btn btn-info" style={{ float: "right" }}>
+          <button
+            type="button"
+            onClick={handleCreate}
+            className="btn btn-info"
+            style={{ float: "right" }}
+          >
             Save{createPostState.loading && "..."}
           </button>
           <div className="error" style={{ marginRight: 20 }}>
