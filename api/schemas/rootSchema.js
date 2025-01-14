@@ -7,12 +7,18 @@ const {
   GraphQLInt,
   GraphQLNonNull,
 } = require("graphql");
+// 
+const { UserType, userRepository } = require("../features/users");
 const { PostType, postRepository } = require("../features/posts");
 
 const rootSchema = {
   query: new GraphQLObjectType({
     name: "RootQuery",
     fields: () => ({
+      getAllUsers: {
+        type: new GraphQLList(UserType),
+        resolve: () => userRepository.getAll(),
+      },
       getAllPosts: {
         type: new GraphQLList(PostType),
         resolve: () => postRepository.getAll(),

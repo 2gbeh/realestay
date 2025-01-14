@@ -15,6 +15,11 @@ import {
 type SelectedPostId = number | string;
 
 export function usePosts() {
+  const [defaultValues, setDefaultValues] = useState({
+    userId: "2",
+    title: "New post title",
+    body: "New post body",
+  });
   const { data: getAllPostsData, ...getAllPostsState } =
     useQuery<GetAllPostsType>(GET_ALL_POSTS);
   const [createPost, createPostState] =
@@ -31,10 +36,19 @@ export function usePosts() {
     const formData = new FormData(ev.currentTarget);
     const variables = Object.fromEntries(formData.entries());
     // console.log("🚀 ~ handleCreate ~ variables:", variables);
-    await createPost({
-      variables,
-      refetchQueries: [GET_ALL_POSTS],
-    });
+    try {
+      await createPost({
+        variables,
+        refetchQueries: [GET_ALL_POSTS],
+      });
+      setDefaultValues({
+        userId: "",
+        title: "",
+        body: "",
+      });
+    } catch (err) {
+      // do absolutely nothing
+    }
   }
   async function handleDelete(id: SelectedPostId) {
     if (confirm("Delete post?")) {
@@ -50,6 +64,7 @@ export function usePosts() {
   return {
     posts,
     selectedPostId,
+    defaultValues,
     getAllPostsState,
     createPostState,
     deletePostState,

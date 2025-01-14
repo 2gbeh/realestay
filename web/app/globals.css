@@ -51,6 +51,7 @@ textarea {
 
 table {
   width: 100%;
+  font-size: 14px;
 }
 
 caption {
@@ -61,10 +62,13 @@ caption {
 
 tr {
   border-bottom: solid thin #222;
+  vertical-align: top;
 }
 
 th {
-  padding: 0 10px 20px;
+  background-color: #0a0a0a;
+  color: #aaa;
+  padding: 15px 10px;
   text-align: left;
   text-transform: uppercase;
   font-size: 12px;
