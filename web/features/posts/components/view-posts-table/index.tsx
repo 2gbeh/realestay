@@ -1,7 +1,6 @@
 "use client";
 
-import React, { cache, useState } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 //
 import {
@@ -28,12 +27,9 @@ const ViewPostsTable = () => {
   }
   console.log("🚀 ~ ViewPostsTable");
   // RENDERS
-  return getAllPostsState.loading ? (
-    <p>Loading...</p>
-  ) : getAllPostsState.error ? (
-    <p>Error : {getAllPostsState.error?.message}</p>
-  ) : (
+  return (
     <table>
+      <caption>Showing {data?.getAllPosts.length || 0} total records</caption>
       <thead>
         <tr>
           <th>#</th>
@@ -43,24 +39,43 @@ const ViewPostsTable = () => {
         </tr>
       </thead>
       <tbody>
-        {data?.getAllPosts.map((post, i) => (
-          <tr
-            key={post.id}
-            style={{
-              color:
-                deletePostState.loading && selectedPostId == post.id
-                  ? "red"
-                  : "inherit",
-            }}
-          >
-            <td>{i + 1}</td>
-            <td>{post?.user?.name}</td>
-            <td>{post.title}</td>
-            <td>
-              <button className="btn btn-sm btn-danger" onClick={() => handleDelete(post.id)}>Delete</button>
+        {getAllPostsState.loading ? (
+          <tr>
+            <td colSpan={4} className="text-sm text-center">
+              Loading posts...
             </td>
           </tr>
-        ))}
+        ) : getAllPostsState.error ? (
+          <tr>
+            <td colSpan={4} className="text-sm text-center error">
+              Error: {getAllPostsState.error?.message}
+            </td>
+          </tr>
+        ) : (
+          data?.getAllPosts.map((post, i) => (
+            <tr
+              key={post.id}
+              style={{
+                color:
+                  deletePostState.loading && selectedPostId == post.id
+                    ? "red"
+                    : "inherit",
+              }}
+            >
+              <td>{i + 1}</td>
+              <td>{post?.user?.name}</td>
+              <td>{post.title}</td>
+              <td>
+                <button
+                  className="btn btn-sm btn-danger"
+                  onClick={() => handleDelete(post.id)}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))
+        )}
       </tbody>
     </table>
   );

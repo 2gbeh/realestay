@@ -49,28 +49,14 @@ textarea {
   display: block;
 }
 
-.btn {
-  background-color: white;
-  color: black;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 12px;
-  font-weight: bold;
+table {
+  width: 100%;
 }
 
-.btn-sm {
-  padding: 6px 12px;
-  font-size: 10px;
-}
-
-.btn-danger {
-  background-color: red;
-  color: white;
-}
-
-.btn-info {
-  background-color: blue;
-  color: white;
+caption {
+  color: yellowgreen;
+  padding: 0 10px 10px;
+  text-align: right;
 }
 
 tr {
@@ -96,4 +82,33 @@ td {
 
 .flex-item {
   width: 100%;
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 10px;
+}
+
+.btn-danger {
+  background-color: red;
+  color: white;
+}
+
+.btn-info {
+  background-color: blue;
+  color: white;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
 }

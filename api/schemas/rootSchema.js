@@ -32,7 +32,7 @@ const rootSchema = {
       createPost: {
         type: PostType,
         args: {
-          userId: { type: GraphQLNonNull(GraphQLInt) },
+          userId: { type: GraphQLNonNull(GraphQLString) },
           title: { type: GraphQLNonNull(GraphQLString) },
           body: { type: GraphQLNonNull(GraphQLString) },
         },

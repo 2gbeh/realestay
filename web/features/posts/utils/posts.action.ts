@@ -33,7 +33,7 @@ export const GET_POST_BY_ID = gql`
 
 export type CreatePostType = { createPost: PostEntity };
 export const CREATE_POST = gql`
-  mutation createPost($userId: Int!, $title: String!, $body: String!) {
+  mutation createPost($userId: String!, $title: String!, $body: String!) {
     createPost(userId: $userId, title: $title, body: $body) {
       id
     }

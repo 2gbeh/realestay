@@ -13,7 +13,7 @@ export default function Posts() {
       <section>
         <AddPostForm />
       </section>
-      <section>
+      <section style={{ maxHeight: 480, overflow: "auto" }}>
         <ViewPostsTable />
       </section>
     </main>

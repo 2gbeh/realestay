@@ -12,7 +12,7 @@ const PostType = new GraphQLObjectType({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
     body: { type: GraphQLString },
-    userId: { type: GraphQLInt },
+    userId: { type: GraphQLString },
     user: {
       type: UserType,
       resolve: (parent) => userRepository.getById(parent.userId),
