@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require("uuid");
 
 const strCompare = (i, j) => String(i) === String(j);
 
-class CommonRepository {
+class RootResolver {
   constructor(collection = []) {
     this.collection = collection;
   }
@@ -44,4 +44,4 @@ class CommonRepository {
   }
 }
 
-module.exports = CommonRepository;
+module.exports = RootResolver;

@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { useUsers } from "@/features/users";
-import { usePosts } from "../../hooks/usePosts";
+import { useUser } from "@/features/user/hooks/useUser";
+import { usePost } from "../../hooks/usePost";
 
 const AddPostForm = () => {
-  const { users, getAllUsersState } = useUsers();
+  const { users, getAllUsersState } = useUser();
   const { formData, updateFormData, createPostState, handleCreate } =
-    usePosts();
+    usePost();
   console.log("🚀 ~ AddPostForm");
   // RENDERS
   return (

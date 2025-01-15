@@ -11,8 +11,8 @@ import {
   CREATE_POST,
   DeletePostType,
   DELETE_POST,
-} from "../utils/posts.action";
-import { POST } from "../utils/posts.constant";
+} from "../utils/post.action";
+import { POST } from "../utils/post.constant";
 
 type SelectedPostId = number | string;
 
@@ -20,7 +20,7 @@ const initialValues = P.createPost.formData
   ? POST.mockValues
   : POST.defaultValues;
 
-export function usePosts() {
+export function usePost() {
   const [formData, setFormData] = useState(initialValues);
   const { data: getAllPostsData, ...getAllPostsState } =
     useQuery<GetAllPostsType>(GET_ALL_POSTS);

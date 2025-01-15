@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 //
-import { AddPostForm, ViewPostsTable } from "@/features/posts";
+import { AddPostForm, ViewPostsTable } from "@/features/post";
 
 export const metadata: Metadata = {
   title: "All Posts | pinksl.ip",

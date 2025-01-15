@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { PostEntity } from "./posts.interface";
+import { PostEntity } from "./post.interface";
 
 export type GetAllPostsType = { getAllPosts: PostEntity[] };
 export const GET_ALL_POSTS = gql`

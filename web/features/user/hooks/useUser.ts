@@ -2,9 +2,9 @@
 
 import { useQuery, useMutation } from "@apollo/client";
 //
-import { GetAllUsersType, GET_ALL_USERS } from "../utils/users.action";
+import { GetAllUsersType, GET_ALL_USERS } from "../utils/user.action";
 
-export function useUsers() {
+export function useUser() {
   const { data: getAllUsersData, ...getAllUsersState } =
     useQuery<GetAllUsersType>(GET_ALL_USERS);
   const users = getAllUsersData?.getAllUsers || [];

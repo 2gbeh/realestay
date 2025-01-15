@@ -1,4 +1,4 @@
-import { UserEntity } from "@/features/users/utils/users.interface";
+import { UserEntity } from "@/features/user/utils/user.interface";
 
 export interface PostEntity {
   id: number | string;

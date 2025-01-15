@@ -4,7 +4,9 @@ const {
   GraphQLString,
   GraphQLInt,
 } = require("graphql");
-const { UserType, userRepository } = require("../users");
+// 
+const UserType = require("../types/UserType");
+const userResolver = require("../resolvers/UserResolver");
 
 const PostType = new GraphQLObjectType({
   name: "Post",
@@ -15,20 +17,9 @@ const PostType = new GraphQLObjectType({
     userId: { type: GraphQLString },
     user: {
       type: UserType,
-      resolve: (parent) => userRepository.getById(parent.userId),
+      resolve: (parent) => userResolver.getById(parent.userId),
     },
   }),
 });
 
-const UpdatePostDto = new GraphQLObjectType({
-  name: "UpdatePostDto",
-  fields: () => ({
-    title: { type: GraphQLString },
-    body: { type: GraphQLString },
-  }),
-});
-
-module.exports = {
-  PostType,
-  UpdatePostDto,
-};
+module.exports = PostType;

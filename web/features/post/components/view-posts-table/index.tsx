@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Trash2 } from "lucide-react";
-import { usePosts } from "../../hooks/usePosts";
+import { usePost } from "../../hooks/usePost";
 
 const ViewPostsTable = () => {
   const {
@@ -11,7 +11,7 @@ const ViewPostsTable = () => {
     getAllPostsState,
     deletePostState,
     handleDelete,
-  } = usePosts();
+  } = usePost();
   console.log("🚀 ~ ViewPostsTable");
   // RENDERS
   return (
