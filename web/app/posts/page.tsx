@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Posts() {
   // RENDERS
   return (
-    <main>
+    <main className="">
       <section>
         <AddPostForm />
       </section>
