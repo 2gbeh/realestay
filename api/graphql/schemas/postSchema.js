@@ -7,6 +7,10 @@ const {
 } = require("graphql");
 //
 const PostType = require("../types/PostType");
+const {
+  createPostInputType,
+  updatePostInputType,
+} = require("../inputs/postInput");
 const postResolver = require("../resolvers/PostResolver");
 
 const postSchema = {
@@ -27,20 +31,17 @@ const postSchema = {
     createPost: {
       type: PostType,
       args: {
-        userId: { type: GraphQLNonNull(GraphQLString) },
-        title: { type: GraphQLNonNull(GraphQLString) },
-        body: { type: GraphQLNonNull(GraphQLString) },
+        input: { type: createPostInputType },
       },
-      resolve: (_, args) => postResolver.add(args),
+      resolve: (_, { input }) => postResolver.add(input),
     },
     updatePost: {
       type: PostType,
       args: {
         id: { type: GraphQLNonNull(GraphQLID) },
-        title: { type: GraphQLString },
-        body: { type: GraphQLString },
+        input: { type: updatePostInputType },
       },
-      resolve: (_, { id, ...args }) => postResolver.edit(args, id),
+      resolve: (_, { id, input }) => postResolver.edit(input, id),
     },
     deletePost: {
       type: PostType,

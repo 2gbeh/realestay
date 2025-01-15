@@ -68,3 +68,4 @@ Coming soon
 ## Resources
 
 - [GraphQL Crash Course w/MERN - Traversy Media](https://youtu.be/BcLNfwF04Kw?si=qgy1hWF7e7wPUA_I)
+- [Get started with Apollo Client](https://www.apollographql.com/docs/react/get-started)

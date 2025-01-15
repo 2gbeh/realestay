@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 //
 import { PROTOTYPE as P } from "@/constants/PROTOTYPE";
+import { POST } from "../utils/post.constant";
 import {
   GetAllPostsType,
   GET_ALL_POSTS,
@@ -12,7 +13,6 @@ import {
   DeletePostType,
   DELETE_POST,
 } from "../utils/post.action";
-import { POST } from "../utils/post.constant";
 
 type SelectedPostId = number | string;
 
@@ -39,7 +39,7 @@ export function usePost() {
   async function handleCreate() {
     try {
       await createPost({
-        variables: formData,
+        variables: { input: formData },
         refetchQueries: [GET_ALL_POSTS],
       });
       resetFormData();
