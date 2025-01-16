@@ -17,9 +17,7 @@ export default function Home() {
             <FilterByAuthor />
             <DeleteSelectedPosts />
           </div>
-          <div>
-            <AddPost />
-          </div>
+          <AddPost />
         </section>
         <PostsTable posts={data} />
         <PostsTablePagination />
