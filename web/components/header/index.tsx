@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/shadcn/ui/avatar";
+} from "@/components/_shadcn/ui/avatar";
 import { APP } from "@/constants/APP";
 
 export const Header = () => {

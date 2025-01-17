@@ -15,21 +15,21 @@ import {
   Trash2Icon,
   XIcon,
 } from "lucide-react";
-import { Input } from "@/components/shadcn/ui/input";
+import { Input } from "@/components/_shadcn/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/shadcn/ui/select";
-import { Checkbox } from "@/components/shadcn/ui/checkbox";
-import { Button } from "@/components/shadcn/ui/button";
+} from "@/components/_shadcn/ui/select";
+import { Checkbox } from "@/components/_shadcn/ui/checkbox";
+import { Button } from "@/components/_shadcn/ui/button";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/shadcn/ui/avatar";
+} from "@/components/_shadcn/ui/avatar";
 import {
   Table,
   TableBody,
@@ -39,7 +39,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/shadcn/ui/table";
+} from "@/components/_shadcn/ui/table";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -54,7 +54,7 @@ import {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-} from "@/components/shadcn/ui/dropdown-menu";
+} from "@/components/_shadcn/ui/dropdown-menu";
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
@@ -157,7 +157,7 @@ export default function TableDemo() {
           <TableHeader>
             <TableRow>
               <TableHead>
-                <Checkbox checked  />
+                <Checkbox checked />
               </TableHead>
               <TableHead>
                 <div className="flex items-center gap-2">

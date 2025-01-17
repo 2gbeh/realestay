@@ -1,11 +1,11 @@
 import { ChevronsUpDownIcon, EllipsisIcon } from "lucide-react";
-import { Checkbox } from "@/components/shadcn/ui/checkbox";
-import { Button } from "@/components/shadcn/ui/button";
+import { Checkbox } from "@/components/_shadcn/ui/checkbox";
+import { Button } from "@/components/_shadcn/ui/button";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/shadcn/ui/avatar";
+} from "@/components/_shadcn/ui/avatar";
 import {
   Table,
   TableBody,
@@ -13,14 +13,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/shadcn/ui/table";
+} from "@/components/_shadcn/ui/table";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/shadcn/ui/dropdown-menu";
+} from "@/components/_shadcn/ui/dropdown-menu";
 
 interface IProps {
   posts: any[];

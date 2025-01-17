@@ -10,8 +10,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/shadcn/ui/select";
-import { Button } from "@/components/shadcn/ui/button";
+} from "@/components/_shadcn/ui/select";
+import { Button } from "@/components/_shadcn/ui/button";
 
 export const PostsTablePagination = () => {
   return (

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Settings2Icon } from "lucide-react";
-import { Button } from "@/components/shadcn/ui/button";
+import { Button } from "@/components/_shadcn/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/shadcn/ui/dropdown-menu";
+} from "@/components/_shadcn/ui/dropdown-menu";
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
@@ -55,4 +55,4 @@ const FilterByAuthor = () => {
   );
 };
 
-export default React.memo(FilterByAuthor)
+export default React.memo(FilterByAuthor);

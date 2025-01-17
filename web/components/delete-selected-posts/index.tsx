@@ -1,5 +1,5 @@
 import { XIcon } from "lucide-react";
-import { Button } from "@/components/shadcn/ui/button";
+import { Button } from "@/components/_shadcn/ui/button";
 
 export const DeleteSelectedPosts = () => {
   return (
