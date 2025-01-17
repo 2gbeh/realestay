@@ -59,9 +59,9 @@ export const PostsTable: React.FC<IProps> = ({ posts }) => {
                 <AvatarImage src="#" alt="@shadcn" />
                 <AvatarFallback>ET</AvatarFallback>
               </Avatar>
-              {post.post}
+              {post.paymentStatus}
             </TableCell>
-            <TableCell>{post.paymentStatus}</TableCell>
+            <TableCell>{post.totalAmount}</TableCell>
             <TableCell>{post.paymentMethod}</TableCell>
             <TableCell className="w-10">
               <DropdownMenu>
