@@ -45,7 +45,7 @@ export const AddPost = () => {
             </Label>
             <Select>
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="" />
+                <SelectValue placeholder="Choose one" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="light">Light</SelectItem>
