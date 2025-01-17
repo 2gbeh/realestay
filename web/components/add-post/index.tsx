@@ -1,17 +1,17 @@
 "use client";
 
 import { CirclePlusIcon } from "lucide-react";
-import { Label } from "@/components/shadcn/ui/label";
-import { Input } from "@/components/shadcn/ui/input";
+import { Label } from "@/components/_shadcn/ui/label";
+import { Input } from "@/components/_shadcn/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/shadcn/ui/select";
-import { Textarea } from "@/components/shadcn/ui/textarea";
-import { Button } from "@/components/shadcn/ui/button";
+} from "@/components/_shadcn/ui/select";
+import { Textarea } from "@/components/_shadcn/ui/textarea";
+import { Button } from "@/components/_shadcn/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -20,7 +20,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/shadcn/ui/dialog";
+} from "@/components/_shadcn/ui/dialog";
 
 export const AddPost = () => {
   return (
