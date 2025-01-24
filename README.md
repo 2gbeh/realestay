@@ -4,9 +4,9 @@
   </a>
 </p>
 
-# pinksl.ip
+# Realestay
 
-Social Media Landing Page - Next.js + GraphQL
+Real Estate Marketplace - NestJS + GraphQL
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
 [![React](https://img.shields.io/badge/React-18.x-58c4dc.svg)](https://react.dev/learn/start-a-new-react-project)
