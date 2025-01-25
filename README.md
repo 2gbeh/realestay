@@ -6,7 +6,7 @@
 
 # Realestay
 
-Real Estate Marketplace - Next.js + GraphQL
+Real Estate Marketplace - Next.js, NestJS + GraphQL
 
 <!-- [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) -->
 
@@ -28,7 +28,7 @@ $ cd realestay
 #### Client Setup
 
 ```sh
-$ cd web
+$ cd realestay/web
 $ npm cache clean --force
 $ npm install
 # OR npm install --legacy-peer-deps
@@ -43,7 +43,7 @@ $ npm run dev
 #### Server Setup
 
 ```sh
-$ cd api
+$ cd realestay/api
 $ npm cache clean --force
 $ npm install
 # OR npm install --legacy-peer-deps
@@ -57,15 +57,36 @@ $ npm run dev
 
 > Server: http://localhost:8000/graphql
 
+#### Server Setup (v2)
+
+```sh
+$ cd realestay/api-v2
+$ npm cache clean --force
+$ npm install
+# OR npm install --legacy-peer-deps
+
+TODO: Update .env credentials
+
+$ npm run start:dev
+```
+
+## Usage
+
+> Server: http://localhost:8000/graphql
+
 ## Documentation
 
-Coming soon
+Swagger - https://aladdin-p20y.onrender.com/
 
 ## Screenshots
 
-<!-- ![Dashboard](./web/public/ui/dashboard.png) -->
+#### Admin
 
-Coming soon
+![Admin](./web/public/social-preview-admin.png)
+
+#### API
+
+![API](./web/public/social-preview-api.png)
 
 ## Resources
 
