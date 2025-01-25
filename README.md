@@ -6,7 +6,7 @@
 
 # Realestay
 
-Real Estate Marketplace - Next.js, NestJS + GraphQL
+Real Estate Marketplace
 
 <!-- [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) -->
 
@@ -33,7 +33,7 @@ $ npm cache clean --force
 $ npm install
 # OR npm install --legacy-peer-deps
 
-TODO: Update .env credentials
+TODO: copy .env credentials
 
 $ npm run dev
 ```
@@ -48,7 +48,7 @@ $ npm cache clean --force
 $ npm install
 # OR npm install --legacy-peer-deps
 
-TODO: Update .env credentials
+TODO: copy .env credentials
 
 $ npm run dev
 ```
@@ -65,7 +65,7 @@ $ npm cache clean --force
 $ npm install
 # OR npm install --legacy-peer-deps
 
-TODO: Update .env credentials
+TODO: copy .env credentials
 
 $ npm run start:dev
 ```
@@ -76,7 +76,7 @@ $ npm run start:dev
 
 ## Documentation
 
-Swagger - https://aladdin-p20y.onrender.com/
+- [Swagger](https://aladdin-p20y.onrender.com/)
 
 ## Screenshots
 
