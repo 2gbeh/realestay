@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#" target="blank">
-    <img src="./web/public/social-preview.png" width="100%" alt="Logo" />
+    <img src="./web/public/social-preview.png" width="100%" alt="" />
   </a>
 </p>
 
