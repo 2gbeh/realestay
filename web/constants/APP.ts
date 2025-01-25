@@ -1,4 +1,5 @@
 export const APP = {
-  name: "pinksl.ip",
-  summary: "Social Media Landing Page - Next.js + GraphQL",
+  name: "Realestay",
+  slug: "realestay",
+  summary: "Real Estate Marketplace - Next.js, NestJS + GraphQL",
 };

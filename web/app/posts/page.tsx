@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { AddPostForm, ViewPostsTable } from "@/features/post";
 
 export const metadata: Metadata = {
-  title: "All Posts | pinksl.ip",
+  title: "All Posts | Realestay",
 };
 
 export default function Posts() {

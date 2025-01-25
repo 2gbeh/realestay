@@ -1,32 +1,34 @@
 <p align="center">
   <a href="#" target="blank">
-    <img src="./web/public/social-preview.png" width="100%" alt="Logo" />
+    <img src="./web/public/social-preview.png" width="100%" alt="" />
   </a>
 </p>
 
 # Realestay
 
-Real Estate Marketplace - NestJS + GraphQL
+Real Estate Marketplace - Next.js, NestJS + GraphQL
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
-[![React](https://img.shields.io/badge/React-18.x-58c4dc.svg)](https://react.dev/learn/start-a-new-react-project)
+<!-- [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html) -->
+
+[![React](https://img.shields.io/badge/React-19.x-087ea4.svg)](https://react.dev/learn/start-a-new-react-project)
 [![Next.js](https://img.shields.io/badge/Next-15.x-000.svg)](https://nextjs.org/docs/getting-started/installation)
+[![NestJS](https://img.shields.io/badge/NestJS-10.x-e0234e.svg)](https://docs.nestjs.com/first-steps)
 
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
-![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 
 ## Setup
 
 ```sh
-$ git clone https://github.com/2gbeh/pinksl.ip.git
-$ cd pinksl.ip
+$ git clone https://github.com/2gbeh/realestay.git
+$ cd realestay
 ```
 
 #### Client Setup
 
 ```sh
-$ cd web
+$ cd realestay/web
 $ npm cache clean --force
 $ npm install
 # OR npm install --legacy-peer-deps
@@ -41,7 +43,7 @@ $ npm run dev
 #### Server Setup
 
 ```sh
-$ cd api
+$ cd realestay/api
 $ npm cache clean --force
 $ npm install
 # OR npm install --legacy-peer-deps
@@ -55,15 +57,36 @@ $ npm run dev
 
 > Server: http://localhost:8000/graphql
 
+#### Server Setup (v2)
+
+```sh
+$ cd realestay/api-v2
+$ npm cache clean --force
+$ npm install
+# OR npm install --legacy-peer-deps
+
+TODO: Update .env credentials
+
+$ npm run start:dev
+```
+
+## Usage
+
+> Server: http://localhost:8000/graphql
+
 ## Documentation
 
-Coming soon
+Swagger - https://aladdin-p20y.onrender.com/
 
 ## Screenshots
 
-<!-- ![Dashboard](./web/public/ui/dashboard.png) -->
+#### Admin
 
-Coming soon
+![Admin](./web/public/social-preview-admin.png)
+
+#### API
+
+![API](./web/public/social-preview-api.png)
 
 ## Resources
 
