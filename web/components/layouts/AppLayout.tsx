@@ -1,6 +1,8 @@
-import React, { PropsWithChildren, ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
+//
 import Navbar from "../atoms/Navbar";
+import { LayoutPropsType } from "@/types/common.types";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,9 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-type PropsType = PropsWithChildren;
-
-const AppLayout: React.FC<PropsType> = ({ children }) => {
+const AppLayout: React.FC<LayoutPropsType> = ({ children }) => {
   return (
     <div className={`${geistSans.variable} ${geistMono.variable}`}>
       <Navbar />

@@ -1,6 +1,6 @@
-import { TodoEntity } from "./todo.types";
+import { TodoEntity } from "./todos.types";
 
-export class TodoPipe {
+export class TodosPipe {
   static validate() {}
 
   static prepare() {}

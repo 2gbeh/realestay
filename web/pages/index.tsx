@@ -1,14 +1,13 @@
-import type { GetServerSideProps } from "next";
 import Image from "next/image";
 //
-import type { NextPageWithLayout } from "./_app";
 import { getAuthLayout } from "@/components/layouts/AuthLayout";
+import type {
+  GetStaticProps,
+  PagePropsType,
+  NextPageWithLayout,
+} from "@/types/common.types";
 
-type ReturnType = {
-  title?: string;
-};
-
-export const getStaticProps: GetServerSideProps<ReturnType> = async () => {
+export const getStaticProps: GetStaticProps<PagePropsType> = () => {
   return { props: { title: "Home" } };
 };
 

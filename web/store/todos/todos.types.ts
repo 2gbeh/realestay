@@ -19,6 +19,6 @@ export type UpdateTodoDTO = {
   };
 };
 
-export type SearchTodoDTO = {
+export type QueryTodosDTO = void | {
   title: string;
 };

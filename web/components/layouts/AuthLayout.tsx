@@ -1,11 +1,11 @@
-import React, { PropsWithChildren, ReactElement } from "react";
+import React, { ReactElement } from "react";
+//
 import AppLayout from "./AppLayout";
+import { LayoutPropsType } from "@/types/common.types";
 
-type PropsType = PropsWithChildren;
-
-const AuthLayout: React.FC<PropsType> = ({ children }) => {
+const AuthLayout: React.FC<LayoutPropsType> = ({ children }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex min-h-screen items-center justify-center">
       {children}
     </div>
   );

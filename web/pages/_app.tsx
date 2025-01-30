@@ -1,14 +1,12 @@
 import "@/styles/globals.css";
 
-import type { ReactElement, ReactNode } from "react";
-import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { Provider as ReduxProvider } from "react-redux";
+//
 import { APP } from "@/constants/APP";
-
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
+import { NextPageWithLayout } from "@/types/common.types";
+import store from "@/store";
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
@@ -20,13 +18,13 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   // console.log("🚀 ~ MyApp ~ pageProps:", pageProps);
   return getLayout(
-    <>
+    <ReduxProvider store={store}>
       <Head>
         <title>
           {pageProps?.title ? `${pageProps.title} | ${APP.name}` : APP.name}
         </title>
       </Head>
       <Component {...pageProps} />
-    </>,
+    </ReduxProvider>,
   );
 }
