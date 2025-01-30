@@ -3,13 +3,13 @@ export type UserEntity = {
   name: string;
   username: string;
   email: string;
-  address: UserEntity_AddressType;
+  address: UserEntityAddress;
   phone: string;
   website: string;
-  company: UserEntity_CompanyType;
+  company: UserEntityCompany;
 };
 
-export type UserEntity_AddressType = {
+export type UserEntityAddress = {
   street: string;
   suite: string;
   city: string;
@@ -20,8 +20,14 @@ export type UserEntity_AddressType = {
   };
 };
 
-export type UserEntity_CompanyType = {
+export type UserEntityCompany = {
   name: string;
   catchPhrase: string;
   bs: string;
+};
+
+export type QueryUsersDTO = void | {
+  name?: string;
+  username?: string;
+  email?: string;
 };

@@ -11,8 +11,13 @@ const NavLink: React.FC<PropsType> = ({ href, children, ...props }) => {
   const router = useRouter();
   const isActive = router.asPath === href;
   console.log("🚀 ~ NavLink");
+  // RENDER
   return (
-    <Link {...props} href={href} style={{ color: isActive ? "#0092dd" : "inherit" }}>
+    <Link
+      {...props}
+      href={href}
+      style={{ color: isActive ? "#0092dd" : "inherit" }}
+    >
       {children}
     </Link>
   );

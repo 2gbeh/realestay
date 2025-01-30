@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 // 
 import NavLink from "./NavLink";
 
 const Navbar = () => {
   console.log("🚀 ~ Navbar");
+  // RENDER
   return (
     <footer className="flex flex-wrap items-center justify-center gap-6 py-5">
       {[

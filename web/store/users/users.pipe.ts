@@ -1,7 +1,7 @@
 import { APP } from "@/constants/APP";
-import { UserEntity } from "./user.types";
+import { UserEntity } from "./users.types";
 
-export class UserPipe {
+export class UsersPipe {
   static validate() {}
 
   static prepare() {}

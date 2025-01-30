@@ -1,9 +1,9 @@
 import { mockApiCall } from "@/utils/mockApiCall";
-import { TodoEntity } from "./todo.types";
+import { TodoEntity } from "./todos.types";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
-export class TodoService {
+export class TodosService {
   static async getAllTodos(): Promise<TodoEntity[]> {
     await mockApiCall(5);
     const raw = await fetch(`${baseUrl}/todos`);
