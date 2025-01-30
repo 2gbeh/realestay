@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from 'next/server'
 // import { authenticate } from 'auth-provider'
  
 export function middleware(request: NextRequest) {
-  console.log("🚀 ~ middleware ~ request:", request)
+  // console.log("🚀 ~ middleware ~ request:", request)
   const isAuthenticated = true
  
   // If the user is authenticated, continue as normal

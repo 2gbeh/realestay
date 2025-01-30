@@ -14,8 +14,20 @@
   }
 }
 
+
+* {
+  @apply font-[family-name:var(--font-geist-sans)]
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+code {
+  @apply font-[family-name:var(--font-geist-mono)]
 }
