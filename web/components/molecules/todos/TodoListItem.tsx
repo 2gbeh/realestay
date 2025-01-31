@@ -2,8 +2,7 @@ import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 //
-import { TodoEntity } from "@/store/todos/todos.types";
-import { TodosPipe } from "@/store/todos/todos.pipe";
+import { TodoEntity, TodosPipe } from "@/store/todos";
 
 type PropsType = { todo: TodoEntity };
 

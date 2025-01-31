@@ -7,11 +7,13 @@ import type {
   NextPageWithLayout,
 } from "@/types/common.types";
 
-export const getStaticProps: GetStaticProps<PagePropsType> = () => {
+export const getStaticProps: GetStaticProps<PagePropsType> = async () => {
   return { props: { title: "Home" } };
 };
 
 const Home: NextPageWithLayout = () => {
+  console.log("🚀 ~ Home");
+  // RENDER
   return (
     <Image
       className="dark:invert"

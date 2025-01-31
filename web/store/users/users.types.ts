@@ -3,13 +3,13 @@ export type UserEntity = {
   name: string;
   username: string;
   email: string;
-  address: UserEntityAddress;
+  address: UserEntity_AddressType;
   phone: string;
   website: string;
-  company: UserEntityCompany;
+  company: UserEntity_CompanyType;
 };
 
-export type UserEntityAddress = {
+export type UserEntity_AddressType = {
   street: string;
   suite: string;
   city: string;
@@ -20,14 +20,21 @@ export type UserEntityAddress = {
   };
 };
 
-export type UserEntityCompany = {
+export type UserEntity_CompanyType = {
   name: string;
   catchPhrase: string;
   bs: string;
 };
 
-export type QueryUsersDTO = void | {
-  name?: string;
-  username?: string;
-  email?: string;
+export type CreateUserDTO = {};
+
+export type UpdateUserDTO = {};
+
+export type QueryUsersDTO = void | Partial<
+  Pick<UserEntity, "name" | "username" | "email">
+>;
+
+export type UserType = UserEntity & {
+  displayName: string;
+  mailto: string;
 };

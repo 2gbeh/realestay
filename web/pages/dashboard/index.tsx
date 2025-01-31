@@ -5,24 +5,24 @@ import type {
   NextPageWithLayout,
 } from "@/types/common.types";
 //
-import TodoListItem from "@/features/todos/components/TodoListItem";
-import { todosApi } from "@/store/todos/todos.api";
+import TodoListItem from "@/components/molecules/todos/TodoListItem";
+import { useDashboard } from "@/features/dashboard/hooks/useDashboard";
 
 export const getStaticProps: GetStaticProps<PagePropsType> = () => {
   return { props: { title: "Dashboard" } };
 };
 
-const Dashboard: NextPageWithLayout = () => {
-  const getAllTodosQuery = todosApi.useMockGetAllTodosQuery();
-  // console.log("🚀 ~ todos:", todos);
+const Dashboard: NextPageWithLayout = async () => {
+  const { todos, isLoading } = useDashboard();
+  console.log("🚀 ~ Dashboard");
+  // RENDER
   return (
     <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-      {getAllTodosQuery.isLoading ? (
+      {isLoading ? (
         <h1>Loading...</h1>
-      ) : getAllTodosQuery?.data?.data &&
-        getAllTodosQuery.data.data.length > 0 ? (
+      ) : todos.length > 0 ? (
         <ol className="list-inside list-decimal text-center sm:text-left">
-          {getAllTodosQuery.data.data.map((item) => (
+          {todos.map((item) => (
             <li key={item.id} className="mb-2">
               <TodoListItem todo={item} />
             </li>

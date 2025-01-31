@@ -1,11 +1,11 @@
+import { BaseApiResponseType } from "../store.types";
 import { baseApi } from "../base/base.api";
-import { IApiResponse } from "../base/base.types";
 import { UserEntity, QueryUsersDTO } from "./users.types";
 import mockGetAllUsersData from "./data/getAllUsers.json";
 import mockGetUserByIdData from "./data/getUserById.json";
 
-type ResourceType = IApiResponse<UserEntity>;
-type CollectionType = IApiResponse<UserEntity[]>;
+type ResourceType = BaseApiResponseType<UserEntity>;
+type CollectionType = BaseApiResponseType<UserEntity[]>;
 
 let [url, type] = ["/users", "users"] as const;
 
@@ -46,7 +46,7 @@ export const usersApi = baseApi.injectEndpoints({
       }),
       providesTags: (result, error, id) => [{ type, id }],
     }),
-    mockGetUserById: build.query<ResourceType, void>({
+    mockGetUserById: build.query<ResourceType, void | number>({
       queryFn: () => ({
         data: { success: true, data: mockGetUserByIdData, message: null },
       }),

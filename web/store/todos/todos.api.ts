@@ -1,11 +1,11 @@
+import { BaseApiResponseType } from "../store.types";
 import { baseApi } from "../base/base.api";
-import { IApiResponse } from "../base/base.types";
 import { TodoEntity, QueryTodosDTO } from "./todos.types";
 import mockGetAllTodosData from "./data/getAllTodos.json";
 import mockGetTodoByIdData from "./data/getTodoById.json";
 
-type ResourceType = IApiResponse<TodoEntity>;
-type CollectionType = IApiResponse<TodoEntity[]>;
+type ResourceType = BaseApiResponseType<TodoEntity>;
+type CollectionType = BaseApiResponseType<TodoEntity[]>;
 
 let [url, type] = ["/todos", "todos"] as const;
 
@@ -46,7 +46,7 @@ export const todosApi = baseApi.injectEndpoints({
       }),
       providesTags: (result, error, id) => [{ type, id }],
     }),
-    mockGetTodoById: build.query<ResourceType, void>({
+    mockGetTodoById: build.query<ResourceType, void | number>({
       queryFn: () => ({
         data: { success: true, data: mockGetTodoByIdData, message: null },
       }),

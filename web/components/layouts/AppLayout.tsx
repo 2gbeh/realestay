@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 // import { Geist, Geist_Mono } from "next/font/google";
 //
+import ReduxProviderWrapper from "../providers/ReduxProviderWrapper";
 import Navbar from "../atoms/Navbar";
 import { LayoutPropsType } from "@/types/common.types";
 
@@ -15,12 +16,14 @@ import { LayoutPropsType } from "@/types/common.types";
 // });
 
 const AppLayout: React.FC<LayoutPropsType> = ({ children }) => {
+  console.log("🚀 ~ AppLayout");
+  // RENDER
   return (
     // <div className={`${geistSans.variable} ${geistMono.variable}`}>
-    <div>
+    <ReduxProviderWrapper>
       <Navbar />
       {children}
-    </div>
+    </ReduxProviderWrapper>
   );
 };
 

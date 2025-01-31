@@ -1,4 +1,4 @@
-import { TodoEntity } from "./todos.types";
+import { TodoEntity, TodoType } from "./todos.types";
 
 export class TodosPipe {
   static validate() {}
@@ -10,6 +10,6 @@ export class TodosPipe {
       ...d,
       textColor: d.completed ? "text-green-600" : "text-yellow-600",
       status: d.completed ? "done" : "pending",
-    };
+    } as TodoType;
   }
 }

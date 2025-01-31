@@ -5,20 +5,16 @@ export type TodoEntity = {
   completed: boolean;
 };
 
-export type CreateTodoDTO = {
-  userId: number;
-  title: string;
-};
+export type CreateTodoDTO = Pick<TodoEntity, "userId" | "title">;
 
 export type UpdateTodoDTO = {
   id: number;
-  body: {
-    userId?: number;
-    title?: string;
-    completed?: boolean;
-  };
+  body: Partial<Pick<TodoEntity, "userId" | "title" | "completed">>;
 };
 
-export type QueryTodosDTO = void | {
-  title: string;
+export type QueryTodosDTO = void | Pick<TodoEntity, "title">;
+
+export type TodoType = TodoEntity & {
+  textColor: string;
+  status: "done" | "pending";
 };

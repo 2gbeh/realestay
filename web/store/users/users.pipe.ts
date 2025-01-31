@@ -1,5 +1,5 @@
 import { APP } from "@/constants/APP";
-import { UserEntity } from "./users.types";
+import { UserEntity, UserType } from "./users.types";
 
 export class UsersPipe {
   static validate() {}
@@ -17,6 +17,6 @@ export class UsersPipe {
           " ",
           "%20",
         ),
-    };
+    } as UserType;
   }
 }
