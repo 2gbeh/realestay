@@ -8,11 +8,11 @@ import type {
 import TodoListItem from "@/components/molecules/todos/TodoListItem";
 import { useDashboard } from "@/features/dashboard/hooks/useDashboard";
 
-export const getStaticProps: GetStaticProps<PagePropsType> = () => {
+export const getStaticProps: GetStaticProps<PagePropsType> = async () => {
   return { props: { title: "Dashboard" } };
 };
 
-const Dashboard: NextPageWithLayout = async () => {
+const Dashboard: NextPageWithLayout = () => {
   const { todos, isLoading } = useDashboard();
   console.log("🚀 ~ Dashboard");
   // RENDER

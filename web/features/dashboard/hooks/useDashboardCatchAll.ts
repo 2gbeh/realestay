@@ -6,6 +6,7 @@ import { usersApi, UserType, UsersPipe } from "@/store/users";
 
 export function useDashboardCatchAll(todoId: number) {
   // SHARED STATES
+  const router = useRouter();
   const { data: getTodoByIdQueryData, ...getTodoByIdQueryState } =
     todosApi.useGetTodoByIdQuery(todoId);
   const [
@@ -13,14 +14,16 @@ export function useDashboardCatchAll(todoId: number) {
     { data: lazyGetUserByIdQueryData, ...lazyGetUserByIdQueryState },
   ] = usersApi.useLazyGetUserByIdQuery();
   // LOCAL STATES
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const [transformedTodo, setTransformedTodo] = useState<TodoType>();
   const [transformedUser, setTransformedUser] = useState<UserType>();
   // COMPUTED VALUES
-  const isLoading =
-    getTodoByIdQueryState.isFetching || lazyGetUserByIdQueryState.isFetching;
-  const hasError =
-    getTodoByIdQueryState.error || lazyGetUserByIdQueryState.error;
   // STATE MUTATORS
+  const handlePrev = () =>
+    todoId > 1 && router.push(`/dashboard/${Number(todoId) - 1}`);
+  const handleNext = () =>
+    todoId < 200 && router.push(`/dashboard/${Number(todoId) + 1}`);
   // SIDE EFFECTS
   useEffect(() => {
     if (getTodoByIdQueryData?.data) {
@@ -37,6 +40,10 @@ export function useDashboardCatchAll(todoId: number) {
         })
         .catch((err) => {
           console.log("🚀 ~ lazyGetUserByIdQuery ~ err:", err);
+          setHasError(true);
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     }
   }, [getTodoByIdQueryData]);
@@ -46,5 +53,7 @@ export function useDashboardCatchAll(todoId: number) {
     hasError,
     transformedTodo,
     transformedUser,
+    handlePrev,
+    handleNext,
   };
 }

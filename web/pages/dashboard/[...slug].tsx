@@ -19,8 +19,14 @@ export const getServerSideProps: GetServerSideProps<ReturnType> = async (
 };
 
 const DashboardCatchAll: NextPageWithLayout<ReturnType> = ({ id }) => {
-  const { isLoading, hasError, transformedTodo, transformedUser } =
-    useDashboardCatchAll(Number(id));
+  const {
+    isLoading,
+    hasError,
+    transformedTodo,
+    transformedUser,
+    handlePrev,
+    handleNext,
+  } = useDashboardCatchAll(Number(id));
   console.log("🚀 ~ DashboardCatchAll");
   // RENDER
   return (
@@ -46,6 +52,27 @@ const DashboardCatchAll: NextPageWithLayout<ReturnType> = ({ id }) => {
           </code>
         </p>
       )}
+
+      {/* CTA */}
+      <div className="flex items-center text-sm">
+        <button
+          className="h-[30px] bg-black px-2.5 text-white dark:bg-white dark:text-black"
+          onClick={handlePrev}
+        >
+          Prev
+        </button>
+        <input
+          value={id}
+          className="h-[30px] w-10 border bg-transparent text-center text-sm "
+          disabled
+        />
+        <button
+          className="h-[30px] bg-black px-2.5 text-white dark:bg-white dark:text-black"
+          onClick={handleNext}
+        >
+          Next
+        </button>
+      </div>
     </main>
   );
 };
