@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { LuHouse } from "react-icons/lu";
 //
-import { getAuthLayout } from "@/components/layouts/AuthLayout";
 import type { NextPageWithLayout } from "@/types/common.types";
+import { getGuestLayout } from "@/components/layouts/GuestLayout";
+import Banner from "@/components/atoms/Banner";
 
 const Home: NextPageWithLayout = () => {
   console.log("🚀 ~ Home");
   // RENDER
   return (
     <main>
+      <Banner />
       <Image
         className="dark:invert"
         src="/next.svg"
@@ -22,6 +24,6 @@ const Home: NextPageWithLayout = () => {
   );
 };
 
-Home.getLayout = getAuthLayout;
+Home.getLayout = getGuestLayout;
 
 export default Home;
