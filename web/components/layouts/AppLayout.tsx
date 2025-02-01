@@ -3,7 +3,6 @@ import React, { ReactElement } from "react";
 //
 import ReduxProviderWrapper from "../providers/ReduxProviderWrapper";
 import Navbar from "../atoms/Navbar";
-import { LayoutPropsType } from "@/types/common.types";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -15,7 +14,7 @@ import { LayoutPropsType } from "@/types/common.types";
 //   subsets: ["latin"],
 // });
 
-const AppLayout: React.FC<LayoutPropsType> = ({ children }) => {
+const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   console.log("🚀 ~ AppLayout");
   // RENDER
   return (

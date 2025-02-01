@@ -1,8 +1,10 @@
 import { Provider as ReduxProvider } from "react-redux";
-import { LayoutPropsType } from "@/types/common.types";
+
 import store from "@/store/store.config";
 
-const ReduxProviderWrapper: React.FC<LayoutPropsType> = ({ children }) => {
+const ReduxProviderWrapper: React.FC<React.PropsWithChildren> = ({
+  children,
+}) => {
   console.log("🚀 ~ ReduxProviderWrapper");
   // RENDER
   return <ReduxProvider store={store}>{children}</ReduxProvider>;

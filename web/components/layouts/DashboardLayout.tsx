@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
 //
-import { LayoutPropsType } from "@/types/common.types";
+
 import AppLayout from "./AppLayout";
 
-const DashboardLayout: React.FC<LayoutPropsType> = ({ children }) => {
+const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   console.log("🚀 ~ DashboardLayout");
   // RENDER
   return <div className="px-5">{children}</div>;

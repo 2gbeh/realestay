@@ -1,9 +1,8 @@
 import React, { ReactElement } from "react";
 //
 import AppLayout from "./AppLayout";
-import { LayoutPropsType } from "@/types/common.types";
 
-const AuthLayout: React.FC<LayoutPropsType> = ({ children }) => {
+const AuthLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   console.log("🚀 ~ AuthLayout");
   // RENDER
   return (
