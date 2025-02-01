@@ -12,7 +12,7 @@ class RootResolver {
   }
   getById(id) {
     const obj = this.collection.find((row) => strCompare(row.id, id));
-    return obj ?? {};
+    return obj || {};
   }
   //
   add(data) {

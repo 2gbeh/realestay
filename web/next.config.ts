@@ -6,9 +6,14 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/login",
+        source: "/home",
         destination: "/",
-        permanent: true,
+        permanent: false,
+      },
+      {
+        source: "/property",
+        destination: "/",
+        permanent: false,
       },
     ];
   },

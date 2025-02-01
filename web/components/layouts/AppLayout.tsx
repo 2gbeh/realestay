@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 // import { Geist, Geist_Mono } from "next/font/google";
 //
-import ReduxProviderWrapper from "../providers/ReduxProviderWrapper";
+import ReduxProvider from "@/store/provider";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -18,7 +18,7 @@ const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   // RENDER
   return (
     // <div className={`${geistSans.variable} ${geistMono.variable}`}>
-    <ReduxProviderWrapper>{children}</ReduxProviderWrapper>
+    <ReduxProvider>{children}</ReduxProvider>
   );
 };
 

@@ -20,9 +20,6 @@
   }
 }
 
-
-
-
 * {
   /* @apply font-[family-name:var(--font-geist-sans)] */
 }
@@ -32,10 +29,46 @@ html {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--onSurface);
+  background: var(--surface); */
 }
 
 code {
   /* @apply font-[family-name:var(--font-geist-mono)] */
+}
+
+.root-container {
+  @apply flex justify-center
+}
+
+.root-wrapper {
+  @apply w-full sm:w-[90%]
+}
+
+.root-wrapper-lg {
+  @apply w-full sm:w-[1024px]
+}
+
+.root-wrapper-md {
+  @apply w-full sm:w-[768px]
+}
+
+.root-wrapper-sm {
+  @apply w-full sm:w-[480px]
+}
+
+.flex-center-between {
+  @apply flex items-center justify-between
+}
+
+.flex-center-center {
+  @apply flex items-center justify-center
+}
+
+.flex-center-end {
+  @apply flex items-center justify-end
+}
+
+.ghost-hover {
+  @apply bg-transparent hover:bg-gray-100 hover:text-inherit rounded-full cursor-pointer
 }

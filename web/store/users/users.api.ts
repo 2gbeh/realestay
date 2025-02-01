@@ -1,4 +1,4 @@
-import { BaseApiResponseType } from "../store.types";
+import { BaseApiResponseType } from "../types";
 import { baseApi } from "../base/base.api";
 import { UserEntity, QueryUsersDTO } from "./users.types";
 import mockGetAllUsersData from "./data/getAllUsers.json";

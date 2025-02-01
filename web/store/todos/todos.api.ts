@@ -1,4 +1,4 @@
-import { BaseApiResponseType } from "../store.types";
+import { BaseApiResponseType } from "../types";
 import { baseApi } from "../base/base.api";
 import { TodoEntity, QueryTodosDTO } from "./todos.types";
 import mockGetAllTodosData from "./data/getAllTodos.json";

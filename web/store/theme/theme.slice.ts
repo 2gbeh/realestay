@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store.config";
+import { RootState } from "../config";
 
 type SliceType = {
   theme: "light" | "dark";
