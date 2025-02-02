@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        surface: "var(--background)",
-        onSurface: "var(--foreground)",
+        surface: "var(--surface)",
+        onSurface: "var(--onSurface)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         tertiary: "var(--tertiary)",

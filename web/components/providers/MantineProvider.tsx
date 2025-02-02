@@ -1,8 +1,7 @@
-import { createTheme, MantineProvider as Provider } from "@mantine/core";
+import { MantineProvider as Provider, createTheme } from "@mantine/core";
 
-const theme = createTheme({
-  /** Put your mantine theme override here */
-});
+/** Put your mantine theme override here */
+const theme = createTheme({});
 
 const MantineProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   console.log("🚀 ~ MantineProvider");

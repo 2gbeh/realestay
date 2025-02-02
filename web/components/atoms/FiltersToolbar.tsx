@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
-import { LuFilter } from "react-icons/lu";
+import { Switch } from "@mantine/core";
+import { LuFilter, LuSettings2 } from "react-icons/lu";
 import {
   FcAdvertising,
   FcAlarmClock,
@@ -22,21 +23,21 @@ const FiltersToolbar: React.FC<PropsType> = () => {
   console.log("🚀 ~ FiltersToolbar");
   // RENDER
   return (
-    <section className="root-container">
-      <div className="root-wrapper flex-center-between gap-10 py-5">
-        <ul className="flex-center-between flex-1 gap-10">
+    <section className="rootContainer">
+      <div className="rootWrapper flexCenterBetween gap-10 py-5">
+        <ul className="flexCenterBetween flex-1 gap-10">
           {filters.map((item, i) => (
             <li
               key={i}
               className={clsx(
-                "flex-col-center cursor-pointer gap-1 border-b-2 pb-2 font-medium text-mutedText hover:border-mutedBorder hover:text-black",
+                "flexColCenter cursor-pointer gap-1 border-b-2 pb-2 font-medium text-mutedText hover:border-mutedBorder hover:text-black",
                 item?.active ? "border-black" : "border-transparent",
               )}
             >
               {item.icon}
               <p
                 className={clsx({
-                  "text-sm hover:text-black": true,
+                  "whitespace-nowrap text-sm hover:text-black": true,
                   "text-black": item?.active,
                 })}
               >
@@ -46,13 +47,13 @@ const FiltersToolbar: React.FC<PropsType> = () => {
           ))}
         </ul>
         <div className="flex items-center gap-5 pb-2">
-          <button className="btn-outline">
-            <LuFilter />
+          <button className="btnOutline">
+            <LuSettings2 />
             Filters
           </button>
-          <button className="btn-outline">
+          <button className="btnOutline">
             Add Caution Fee
-            <LuFilter />
+            <Switch defaultChecked={false} size="md" />
           </button>
         </div>
       </div>

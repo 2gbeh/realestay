@@ -1,12 +1,10 @@
-import React, { ReactElement } from "react";
-//
-
+import React, { PropsWithChildren, ReactElement } from "react";
 import AppLayout from "./AppLayout";
 
-const DashboardLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
+const DashboardLayout: React.FC<PropsWithChildren> = ({ children }) => {
   console.log("🚀 ~ DashboardLayout");
   // RENDER
-  return <div className="px-5">{children}</div>;
+  return <div className="">{children}</div>;
 };
 
 export default DashboardLayout;
@@ -14,7 +12,7 @@ export default DashboardLayout;
 export function getDashboardLayout(page: ReactElement) {
   return (
     <AppLayout>
-      <DashboardLayout>{page}</DashboardLayout>{" "}
+      <DashboardLayout>{page}</DashboardLayout>
     </AppLayout>
   );
 }

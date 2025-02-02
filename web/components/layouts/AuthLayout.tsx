@@ -1,15 +1,10 @@
-import React, { ReactElement } from "react";
-//
+import React, { PropsWithChildren, ReactElement } from "react";
 import AppLayout from "./AppLayout";
 
-const AuthLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
+const AuthLayout: React.FC<PropsWithChildren> = ({ children }) => {
   console.log("🚀 ~ AuthLayout");
   // RENDER
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-      {children}
-    </div>
-  );
+  return <div className="flexCentered">{children}</div>;
 };
 
 export default AuthLayout;

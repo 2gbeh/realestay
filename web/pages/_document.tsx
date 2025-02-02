@@ -3,7 +3,7 @@ import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 
 export default function Document() {
   return (
-    <Html lang="en" className="" {...mantineHtmlProps}>
+    <Html lang="en" {...mantineHtmlProps}>
       <Head>
         <ColorSchemeScript defaultColorScheme="auto" />
       </Head>
