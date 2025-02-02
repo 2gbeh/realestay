@@ -1,8 +1,10 @@
 import React from "react";
 
-type PropsType = {};
+type PropsType = {
+  compact?: boolean;
+};
 
-const SearchBar: React.FC<PropsType> = () => {
+const SearchBar: React.FC<PropsType> = ({ compact }) => {
   console.log("🚀 ~ SearchBar");
   // RENDER
   return <section className="">SearchBar</section>;

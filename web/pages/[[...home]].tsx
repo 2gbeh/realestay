@@ -2,6 +2,8 @@ import type { NextPageWithLayout } from "@/types/common.types";
 import { getGuestLayout } from "@/components/layouts/GuestLayout";
 import Banner from "@/components/atoms/Banner";
 import Header from "@/components/atoms/Header";
+import SearchBar from "@/components/atoms/SearchBar";
+import FiltersToolbar from "@/components/atoms/FiltersToolbar";
 
 const Home: NextPageWithLayout = () => {
   console.log("🚀 ~ Home");
@@ -10,8 +12,10 @@ const Home: NextPageWithLayout = () => {
     <>
       <Banner />
       <Header />
-      <div className="border-b"></div>
-      <main></main>
+      <main>
+        <div className="border-b"></div>
+        <FiltersToolbar />
+      </main>
     </>
   );
 };

@@ -69,6 +69,14 @@ code {
   @apply flex items-center justify-end
 }
 
+.flex-col-center {
+  @apply flex flex-col items-center
+}
+
+.btn-outline {
+  @apply border border-mutedBorder rounded-xl py-3 px-4 text-sm bg-transparent hover:border-black hover:bg-gray-100 flex items-center gap-2
+}
+
 .ghost-hover {
   @apply bg-transparent hover:bg-gray-100 hover:text-inherit rounded-full cursor-pointer
 }
