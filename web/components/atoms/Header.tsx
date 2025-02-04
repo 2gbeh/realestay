@@ -1,23 +1,25 @@
 import React from "react";
 import { LuMoon, LuSun } from "react-icons/lu";
+import { useMantineColorScheme } from "@mantine/core";
 //
 import TheLogo from "./TheLogo";
 import TypedLink from "./TypedLink";
 import AvatarMenu from "./AvatarMenu";
 import { useRouterFacade } from "@/hooks/useRouterFacade";
-import { useMantineColorScheme } from "@mantine/core";
 
 type PropsType = {
   compact?: boolean;
 };
 
 const Header: React.FC<PropsType> = ({ compact }) => {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme({
+    keepTransitions: true,
+  });
   const { shallow } = useRouterFacade();
   console.log("🚀 ~ Header");
   // RENDER
   return (
-    <section className="rootContainer py-2">
+    <section className="rootContainer py-2 bg-white">
       <div className="flexCenterBetween rootWrapper">
         <figure className="flex h-20 flex-1 items-center">
           <TypedLink href="home" title="Home" className="inline-block">

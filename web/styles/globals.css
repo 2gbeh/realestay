@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --surface: #ffffff;
-  --onSurface: #171717;
-  --primary: #005482;
-  --secondary: #40627E;
-  --tertiary: #912E00;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --surface: #0a0a0a;
-    --onSurface: #ededed;
-    --primary: #93CCFF;
-    --secondary: #A8CAEB;
-    --tertiary: #FFB59B;
-  }
-}
-
 * {
   @apply font-[family-name:var(--font-geist-sans)]
 }
@@ -69,7 +51,7 @@ html {
 }
 
 .btnOutline {
-  @apply border border-mutedBorder rounded-xl px-4 text-sm bg-transparent hover:border-black hover:bg-gray-100 flex items-center gap-2.5 font-medium h-[44px]
+  @apply border rounded-xl px-4 text-sm bg-transparent hover:border-black hover:bg-gray-100 flex items-center gap-2.5 font-medium h-[44px]
 }
 
 .ghost {

@@ -1,33 +1,7 @@
 // https://hexcolorpedia.com/color/?q=0093dd
 export const COLOR = {
-  none: "transparent",
-  white: "#fff",
-  black: "#000",
-  primary: "#0093DD",
-  tertiary: "#DD4A00",
-  // https://material-foundation.github.io/material-theme-builder/
-  alert: {
-    info: "",
-    onInfo: "",
-    infoContainer: "#d8e2ff",
-    onInfoContainer: "#0057d0",
-    success: "#3b693a",
-    onSuccess: "#ffffff",
-    successContainer: "#bcf0b4",
-    onSuccessContainer: "#002105",
-    caution: "#8f4f00",
-    onCaution: "#ffffff",
-    cautionContainer: "#fb8e00",
-    onCautionContainer: "#321800",
-    warning: "",
-    onWarning: "",
-    warningContainer: "#ffe093",
-    onWarningContainer: "#261a00",
-    danger: "",
-    onDanger: "",
-    dangerContainer: "#ffdbc9",
-    onDangerContainer: "#341000",
-  },
+  brand: "#0092DD",
+  accent: "#DD4A00",
   light: {
     primary: "#005482",
     surfaceTint: "#006397",
@@ -180,3 +154,17 @@ export const OPACITY = {
   90: "#000000e6",
   95: "#000000f2",
 };
+
+export const lightColors: Record<string, string> = {};
+export const darkColors: Record<string, string> = {};
+
+const camelCase = (prefix: string, word: string) =>
+  prefix + word.charAt(0).toUpperCase() + word.slice(1);
+
+Object.entries(COLOR.light).map(
+  ([name, color]) => (lightColors[camelCase("light", name)] = color),
+);
+
+Object.entries(COLOR.dark).map(
+  ([name, color]) => (darkColors[camelCase("dark", name)] = color),
+);

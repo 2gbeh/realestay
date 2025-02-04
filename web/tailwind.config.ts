@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { COLOR, lightColors, darkColors } from "./constants/COLOR";
 
 export default {
   darkMode: "selector",
@@ -10,14 +11,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        surface: "var(--surface)",
-        onSurface: "var(--onSurface)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        tertiary: "var(--tertiary)",
-        mutedText: "#6B7280",
-        mutedBg: "#e7e7e2",
-        mutedBorder: "#ddd",
+        brand: COLOR.brand,
+        accent: COLOR.accent,
+        ...lightColors,
+        ...darkColors,
       },
     },
   },

@@ -53,7 +53,7 @@ const FiltersToolbar: React.FC<PropsType> = () => {
           </button>
           <button className="btnOutline">
             Add Caution Fee
-            <Switch defaultChecked={false} size="md" />
+            <Switch defaultChecked={false} color="" size="md" />
           </button>
         </div>
       </div>

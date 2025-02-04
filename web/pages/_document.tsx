@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en" {...mantineHtmlProps}>
       <Head>
-        <ColorSchemeScript defaultColorScheme="auto" />
+        <ColorSchemeScript />
       </Head>
       <body className="antialiased">
         <Main />
