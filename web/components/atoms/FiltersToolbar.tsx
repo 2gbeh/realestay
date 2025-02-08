@@ -51,7 +51,7 @@ const FiltersToolbar: React.FC<PropsType> = () => {
             <LuSettings2 />
             Filters
           </button>
-          <button className="btnOutline">
+          <button className="btnOutline whitespace-nowrap">
             Add Caution Fee
             <Switch defaultChecked={false} color="" size="md" />
           </button>

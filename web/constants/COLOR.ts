@@ -132,6 +132,29 @@ export const COLOR = {
   },
 };
 
+export const ALERT = {
+  info: "",
+  onInfo: "",
+  infoContainer: "#d8e2ff",
+  onInfoContainer: "#0057d0",
+  success: "#3b693a",
+  onSuccess: "#ffffff",
+  successContainer: "#bcf0b4",
+  onSuccessContainer: "#002105",
+  caution: "#8f4f00",
+  onCaution: "#ffffff",
+  cautionContainer: "#fb8e00",
+  onCautionContainer: "#321800",
+  warning: "",
+  onWarning: "",
+  warningContainer: "#ffe093",
+  onWarningContainer: "#261a00",
+  danger: "",
+  onDanger: "",
+  dangerContainer: "#ffdbc9",
+  onDangerContainer: "#341000",
+};
+
 // https://rgbacolorpicker.com/rgba-to-hex
 export const OPACITY = {
   5: "#0000000d",

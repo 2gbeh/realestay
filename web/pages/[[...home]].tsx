@@ -4,6 +4,7 @@ import Banner from "@/components/atoms/Banner";
 import Header from "@/components/atoms/Header";
 import SearchBar from "@/components/atoms/SearchBar";
 import FiltersToolbar from "@/components/atoms/FiltersToolbar";
+import PropertyCard from "@/features/properties/components/PropertyCard";
 
 const Home: NextPageWithLayout = () => {
   console.log("🚀 ~ Home");
@@ -15,6 +16,13 @@ const Home: NextPageWithLayout = () => {
       <main>
         <div className="border-b"></div>
         <FiltersToolbar />
+        <section className="rootContainer">
+          <div className="rootWrapper gridTwoFour gap-5">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <PropertyCard key={i} />
+            ))}
+          </div>
+        </section>
       </main>
     </>
   );

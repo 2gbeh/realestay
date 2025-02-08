@@ -1,6 +1,11 @@
+@import './container.css';
+@import './typography.css';
+@import './form.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 * {
   @apply font-[family-name:var(--font-geist-sans)]
@@ -10,54 +15,22 @@ html {
   scroll-behavior: smooth;
 }
 
-.rootContainer {
-  @apply flex justify-center
+i,
+em,
+var,
+address {
+  font-style: normal;
 }
 
-.rootWrapper {
-  @apply w-full sm:w-[90%]
+label {
+  cursor: pointer;
 }
 
-.rootWrapperLg {
-  @apply w-full sm:w-[1024px]
-}
-
-.rootWrapperMd {
-  @apply w-full sm:w-[768px]
-}
-
-.rootWrapperSm {
-  @apply w-full sm:w-[480px]
-}
-
-.flexCentered {
-  @apply flex min-h-screen items-center justify-center
-}
-
-.flexCenterBetween {
-  @apply flex items-center justify-between
-}
-
-.flexCenterCentre {
-  @apply flex items-center justify-center
-}
-
-.flexCenterEnd {
-  @apply flex items-center justify-end
-}
-
-.flexColCenter {
-  @apply flex flex-col items-center
-}
-
-.btnOutline {
-  @apply border rounded-xl px-4 text-sm bg-transparent hover:border-black hover:bg-gray-100 flex items-center gap-2.5 font-medium h-[44px]
-}
-
-.ghost {
-  @apply border bg-gray-100 text-inherit rounded-full cursor-pointer
-}
-
-.ghostOnHover {
-  @apply bg-transparent hover:bg-gray-100 hover:text-inherit rounded-full cursor-pointer
+input,
+select,
+textarea,
+button {
+  outline: none;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
 }
