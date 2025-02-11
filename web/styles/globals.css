@@ -1,6 +1,9 @@
 @import './container.css';
+@import './flexbox.css';
 @import './typography.css';
+@import './dimension.css';
 @import './form.css';
+@import './misc.css';
 
 @tailwind base;
 @tailwind components;

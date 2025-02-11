@@ -1,0 +1,15 @@
+@tailwind utilities;
+
+@layer utilities {
+  .debug {
+    @apply bg-red-100
+  }
+
+  .debug2 {
+    @apply bg-green-100
+  }
+
+  .debug3 {
+    @apply bg-blue-100
+  }
+}

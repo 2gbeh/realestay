@@ -30,7 +30,7 @@ const FiltersToolbar: React.FC<PropsType> = () => {
             <li
               key={i}
               className={clsx(
-                "flexColCenter cursor-pointer gap-1 border-b-2 pb-2 font-medium text-mutedText hover:border-mutedBorder hover:text-black",
+                "flexColCenter mutedText hover:mutedBorder cursor-pointer gap-1 border-b-2 pb-2 font-medium hover:text-black",
                 item?.active ? "border-black" : "border-transparent",
               )}
             >

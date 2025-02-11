@@ -17,7 +17,7 @@ const Home: NextPageWithLayout = () => {
         <div className="border-b"></div>
         <FiltersToolbar />
         <section className="rootContainer">
-          <div className="rootWrapper gridTwoFour gap-5">
+          <div className="rootWrapper gridTwoFour gap-8">
             {Array.from({ length: 8 }).map((_, i) => (
               <PropertyCard key={i} />
             ))}
