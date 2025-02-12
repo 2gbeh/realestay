@@ -4,40 +4,47 @@ import { LuChevronLeft, LuChevronRight, LuHeart } from "react-icons/lu";
 type PropsType = {};
 
 const PropertyCard: React.FC<PropsType> = ({}) => {
+  const [liked, setLiked] = React.useState(false);
+  const [slide, setSlide] = React.useState(0);
+  const toggleLiked = () => setLiked((prev) => !prev);
+  const onPrevSlide = () => setSlide((prev) => (slide > 0 ? prev - 1 : 4));
+  const onNextSlide = () => setSlide((prev) => (slide < 4 ? prev + 1 : 0));
   console.log("🚀 ~ PropertyCard");
   // RENDER
   return (
-    <div className="border_">
+    <div className="_w-[260px]">
       <figure className="relative rounded-full">
-        <LuHeart size={20} className="absolute right-4 top-4" />
+        <LuHeart
+          size={20}
+          onClick={toggleLiked}
+          className={`absolute right-4 top-4 cursor-pointer ${liked ? "text-red-500" : ""}`}
+        />
         <img src="/images/image.png" alt="" width="100%" />
         <div className="">
           <i className="boxRounded dim-7 flexCenterCenter absolute left-4 top-40 shadow">
-            <LuChevronLeft size={20} />
+            <LuChevronLeft onClick={onPrevSlide} />
           </i>
           <i className="boxRounded dim-7 flexCenterCenter absolute right-4 top-40 shadow">
-            <LuChevronRight />
+            <LuChevronRight onClick={onNextSlide} />
           </i>
         </div>
-        <ul className="">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+        <ul className="flexCenterCenter absolute bottom-3.5 w-full gap-1.5">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <li
+              key={i}
+              onClick={() => setSlide(i)}
+              className={`dim-2-5 cursor-pointer rounded-full transition-colors ${slide === i ? "bg-gray-400" : "bg-gray-300"}`}
+            ></li>
+          ))}
         </ul>
       </figure>
       <div className="space-y-1 py-2">
-        <hgroup className="flexBetween gap-5">
+        <hgroup className="flexBetween gap-2">
           <h1 className="font-medium">
             North Topsail Beach, North Carolina, US
           </h1>
-          <time
-            dateTime="2025-02-23"
-            className="mutedText dim-8 flexColEnd -space-y-1 text-sm"
-          >
-            <span>Feb</span>
-            <span>1</span>
+          <time dateTime="1970-01-01" className="mutedText whitespace-nowrap">
+            Jan 1
           </time>
         </hgroup>
         <p className="mutedText text-sm">8,913 kilometers away</p>

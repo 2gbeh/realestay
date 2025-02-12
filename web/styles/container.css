@@ -32,4 +32,8 @@
   mutedBorder {
     @apply border-gray-500
   }
+
+  mutedBg {
+    @apply bg-gray-500
+  }
 }
