@@ -1,7 +1,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .textMuted {
+  .mutedText {
     @apply text-gray-500
   }
 }

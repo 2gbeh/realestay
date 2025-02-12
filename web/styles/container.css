@@ -21,31 +21,15 @@
     @apply w-full sm:w-[480px]
   }
 
-  .flexCentered {
-    @apply flex min-h-screen items-center justify-center
+  .boxRounded {
+    @apply border bg-gray-100 text-inherit rounded-full cursor-pointer
   }
 
-  .flexCenterBetween {
-    @apply flex items-center justify-between
+  .boxRoundedOnHover {
+    @apply bg-transparent hover:bg-gray-100 hover:text-inherit rounded-full cursor-pointer
   }
 
-  .flexCenterCentre {
-    @apply flex items-center justify-center
-  }
-
-  .flexCenterEnd {
-    @apply flex items-center justify-end
-  }
-
-  .flexColCenter {
-    @apply flex flex-col items-center
-  }
-
-  .gridOneTwo {
-    @apply grid md:grid-cols-1 lg:grid-cols-2
-  }
-
-  .gridTwoFour {
-    @apply grid md:grid-cols-2 lg:grid-cols-4
+  mutedBorder {
+    @apply border-gray-500
   }
 }

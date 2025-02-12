@@ -49,4 +49,3 @@ export const ThemeContextProvider: React.FC<PropsWithChildren> = ({
   );
 };
 
-export default ThemeContextProvider;

@@ -9,7 +9,7 @@ import type {
 import {
   ThemeContextProvider,
   useThemeContext,
-} from "@/context/ThemeContextProvider";
+} from "@/context/ThemeContext";
 
 export const getStaticProps: GetStaticProps<PagePropsType> = async () => {
   return { props: { title: "Home" } };
