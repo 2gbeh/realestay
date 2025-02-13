@@ -23,6 +23,7 @@ const Home: NextPageWithLayout = () => {
             ))}
           </div>
         </section>
+        
       </main>
     </>
   );
