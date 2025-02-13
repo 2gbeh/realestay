@@ -1,7 +1,7 @@
 import React from "react";
 import { LuMenu } from "react-icons/lu";
 //
-import Avatar from "./Avatar";
+import Avatar from "../atoms/Avatar";
 
 const AvatarMenu: React.FC = () => {
   console.log("🚀 ~ AvatarMenu");

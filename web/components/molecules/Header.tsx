@@ -1,9 +1,9 @@
 import React from "react";
 import { LuMoon, LuSun } from "react-icons/lu";
 import { useMantineColorScheme } from "@mantine/core";
+import Logo from "../atoms/Logo";
+import TypedLink from "../atoms/TypedLink";
 //
-import TheLogo from "./TheLogo";
-import TypedLink from "./TypedLink";
 import AvatarMenu from "./AvatarMenu";
 import { useRouterFacade } from "@/hooks/useRouterFacade";
 
@@ -23,7 +23,7 @@ const Header: React.FC<PropsType> = ({ compact }) => {
       <div className="flexCenterBetween rootWrapper">
         <figure className="flex h-20 flex-1 items-center">
           <TypedLink href="home" title="Home" className="inline-block">
-            <TheLogo />
+            <Logo />
           </TypedLink>
         </figure>
         <nav className="flexCenterCenter flex-1 gap-4 font-medium">

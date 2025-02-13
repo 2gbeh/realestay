@@ -6,8 +6,8 @@ type PropsType = {
   compact?: boolean;
 };
 
-const TheLogo: React.FC<PropsType> = ({ size = 100, compact }) => {
-  console.log("🚀 ~ TheLogo");
+const Logo: React.FC<PropsType> = ({ size = 100, compact }) => {
+  console.log("🚀 ~ Logo");
   // RENDER
   return (
     <Image
@@ -20,4 +20,4 @@ const TheLogo: React.FC<PropsType> = ({ size = 100, compact }) => {
   );
 };
 
-export default React.memo(TheLogo);
+export default React.memo(Logo);

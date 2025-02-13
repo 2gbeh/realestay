@@ -1,5 +1,5 @@
 import React from "react";
-import TypedLink from "./TypedLink";
+import TypedLink from "../atoms/TypedLink";
 
 const Banner: React.FC = () => {
   console.log("🚀 ~ Banner");

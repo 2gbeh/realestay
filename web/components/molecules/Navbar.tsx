@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 // 
-import NavLink from "./NavLink";
+import NavLink from "../atoms/NavLink";
 
 const Navbar = () => {
   console.log("🚀 ~ Navbar");
