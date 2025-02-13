@@ -16,7 +16,7 @@ const Navbar = () => {
         <NavLink
           key={i}
           href={item.path}
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          className="flexCenter gap-2 hover:underline hover:underline-offset-4"
         >
           <Image
             aria-hidden

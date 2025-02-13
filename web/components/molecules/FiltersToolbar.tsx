@@ -46,7 +46,7 @@ const FiltersToolbar: React.FC<PropsType> = () => {
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-5 pb-2">
+        <div className="flexCenter gap-5 pb-2">
           <button className="btnOutline">
             <LuSettings2 />
             Filters

@@ -66,7 +66,7 @@ const DashboardCatchAll: NextPageWithLayout<ReturnType> = ({ id }) => {
         )}
 
         {/* CTA */}
-        <div className="flex items-center text-sm">
+        <div className="flexCenter text-sm">
           <button
             className="h-[30px] bg-black px-2.5 text-white dark:bg-white dark:text-black"
             onClick={handlePrev}

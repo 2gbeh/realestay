@@ -9,6 +9,10 @@
     @apply flex min-h-screen items-center justify-center
   }
 
+  .flexCenter {
+    @apply flex items-center
+  }
+
   .flexCenterBetween {
     @apply flex items-center justify-between
   }
