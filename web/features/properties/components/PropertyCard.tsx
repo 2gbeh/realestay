@@ -1,5 +1,6 @@
 import React from "react";
-import { LuChevronLeft, LuChevronRight, LuHeart } from "react-icons/lu";
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 //
 type PropsType = {};
 
@@ -14,11 +15,12 @@ const PropertyCard: React.FC<PropsType> = ({}) => {
   return (
     <div className="_w-[260px]">
       <figure className="relative rounded-full">
-        <LuHeart
-          size={20}
+        <i
           onClick={toggleLiked}
-          className={`absolute right-4 top-4 cursor-pointer ${liked ? "text-red-500" : ""}`}
-        />
+          className="absolute right-4 top-4 cursor-pointer"
+        >
+          {liked ? <FaHeart size={20} color="red" /> : <FaRegHeart size={20} />}
+        </i>
         <img src="/images/image.png" alt="" width="100%" />
         <div className="">
           <i className="boxRounded dim-7 flexCenterCenter absolute left-4 top-40 shadow">
