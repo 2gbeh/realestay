@@ -7,7 +7,7 @@ const Navbar = () => {
   console.log("🚀 ~ Navbar");
   // RENDER
   return (
-    <footer className="flex flex-wrap items-center justify-center gap-6 py-5">
+    <nav className="flex flex-wrap items-center justify-center gap-6 py-5">
       {[
         { label: "Home", path: "/" },
         { label: "Dashboard", path: "/dashboard" },
@@ -28,7 +28,7 @@ const Navbar = () => {
           {item.label}
         </NavLink>
       ))}
-    </footer>
+    </nav>
   );
 };
 

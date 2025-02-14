@@ -2,7 +2,7 @@
 
 @layer utilities {
   .btn {
-    @apply bg-lightPrimary px-6 py-3 rounded-md text-lightOnPrimary font-medium
+    @apply bg-lightPrimary px-6 py-3 rounded-md text-lightOnPrimary font-medium transition-all
   }
 
   .btnOutline {

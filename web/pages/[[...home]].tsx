@@ -8,10 +8,10 @@ const Home: NextPageWithLayout = () => {
   console.log("🚀 ~ Home");
   // RENDER
   return (
-    <main>
+    <main className="">
       <div className="border-b"></div>
       <FiltersToolbar />
-      <section className="rootContainer">
+      <section className="rootContainer mt-4">
         <div className="rootWrapper gridOneSix gap-8">
           {Array.from({ length: 8 }).map((_, i) => (
             <PropertyCard key={i} />

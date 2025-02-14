@@ -5,6 +5,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 //
 import FooterLinks from "./FooterLinks";
 import FooterExtended from "./FooterExtended";
+import { APP } from "@/constants/APP";
 
 type PropsType = { extended?: boolean };
 
@@ -24,7 +25,7 @@ const Footer: React.FC<PropsType> = ({ extended }) => {
           <section className="flexCenterBetween border-t border-gray-300 py-5">
             <div className="flexCenter gap-2">
               <address className="font-medium">
-                &copy; 2024 Realestay Ltd.
+                {APP.copyright}
               </address>
               <Link href="" className="hover:underline">
                 Terms
