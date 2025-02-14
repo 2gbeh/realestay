@@ -2,7 +2,7 @@ import React, { PropsWithChildren, ReactElement } from "react";
 import AppLayout from "./AppLayout";
 import Banner from "../molecules/Banner";
 import Header from "../molecules/Header";
-import Footer from "../molecules/footer";
+import Footer from "../molecules/Footer";
 
 const GuestLayout: React.FC<PropsWithChildren> = ({ children }) => {
   console.log("🚀 ~ GuestLayout");
@@ -12,7 +12,7 @@ const GuestLayout: React.FC<PropsWithChildren> = ({ children }) => {
       <Banner />
       <Header />
       {children}
-      <Footer />
+      <Footer extended />
     </>
   );
 };

@@ -1,0 +1,19 @@
+@tailwind utilities;
+
+@layer utilities {
+  .gridOneTwo {
+    @apply grid md:grid-cols-1 lg:grid-cols-2
+  }
+
+  .gridTwoFour {
+    @apply grid md:grid-cols-2 lg:grid-cols-4
+  }
+
+  .gridOneSix {
+    @apply grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5
+  }
+
+  .gridTwoSix {
+    @apply grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6
+  }
+}
