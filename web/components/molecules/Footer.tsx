@@ -13,19 +13,34 @@ const Footer: React.FC<PropsType> = ({ extended }) => {
   // RENDER
   return (
     <footer className="bg-gray-100">
+      {/* EXTENDED */}
       {extended && <FooterExtended />}
       <div className="rootContainer">
         <div className="rootWrapperLg">
+          {/* FOOTER LINKS */}
           <FooterLinks />
+
+          {/* COPYRIGHT */}
           <section className="flexCenterBetween border-t border-gray-300 py-5">
             <div className="flexCenter gap-2">
               <address className="font-medium">
                 &copy; 2024 Realestay Ltd.
               </address>
-              <Link href="" className="hover:underline">Terms</Link> &bull;
-              <Link href="" className="hover:underline">Sitemap</Link> &bull;
-              <Link href="" className="hover:underline">Privacy</Link> &bull;
-              <Link href="" className="hover:underline">Your Privacy Choices</Link>
+              <Link href="" className="hover:underline">
+                Terms
+              </Link>
+              &bull;
+              <Link href="" className="hover:underline">
+                Sitemap
+              </Link>
+              &bull;
+              <Link href="" className="hover:underline">
+                Privacy
+              </Link>
+              &bull;
+              <Link href="" className="hover:underline">
+                Your Privacy Choices
+              </Link>
             </div>
             <div className="flexCenter gap-5">
               <div title="Choose a language" className="flexCenter gap-2">
