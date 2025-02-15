@@ -3,14 +3,34 @@ import AppLayout from "./AppLayout";
 import Banner from "../molecules/Banner";
 import Header from "../molecules/Header";
 import Footer from "../molecules/Footer";
+import SearchBar from "../molecules/SearchBar";
+import { useRouterFacade } from "@/hooks/useRouterFacade";
 
 const GuestLayout: React.FC<PropsWithChildren> = ({ children }) => {
+  const { routeIs, shallowPush } = useRouterFacade();
   console.log("🚀 ~ GuestLayout");
   // RENDER
   return (
     <>
-      <Banner />
-      <Header />
+      {routeIs("/") && <Banner />}
+      <Header>
+        {routeIs("/") ? (
+          <nav className="flexCenterCenter flex-1 gap-4 font-medium">
+            <button onClick={() => shallowPush({ forRent: true })}>
+              For Rent
+            </button>
+            <button
+              onClick={() => shallowPush({ onSale: true })}
+              className="boxRoundedOnHover mutedText px-4 py-2"
+            >
+              On Sale
+            </button>
+          </nav>
+        ) : (
+          <SearchBar compact />
+        )}
+      </Header>
+      {routeIs("/") && <SearchBar />}
       {children}
       <Footer extended />
     </>

@@ -2,7 +2,7 @@ import type { NextPageWithLayout } from "@/types/common.types";
 import { getGuestLayout } from "@/components/layouts/GuestLayout";
 import SearchBar from "@/components/molecules/SearchBar";
 import FiltersToolbar from "@/components/molecules/FiltersToolbar";
-import PropertyCard from "@/features/properties/components/PropertyCard";
+import PropertyCard from "@/features/properties/components/property-card";
 
 const Home: NextPageWithLayout = () => {
   console.log("🚀 ~ Home");

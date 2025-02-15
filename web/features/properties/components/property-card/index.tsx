@@ -2,14 +2,20 @@ import React from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 //
+import { usePropertyCard } from "./hook";
+
 type PropsType = {};
 
-const PropertyCard: React.FC<PropsType> = ({}) => {
-  const [liked, setLiked] = React.useState(false);
-  const [slide, setSlide] = React.useState(0);
-  const toggleLiked = () => setLiked((prev) => !prev);
-  const onPrevSlide = () => setSlide((prev) => (slide > 0 ? prev - 1 : 4));
-  const onNextSlide = () => setSlide((prev) => (slide < 4 ? prev + 1 : 0));
+const PropertyCard: React.FC<PropsType> = () => {
+  const {
+    liked,
+    toggleLiked,
+    slide,
+    setSlide,
+    onPrevSlide,
+    onNextSlide,
+    gotoPropertyDetails,
+  } = usePropertyCard();
   console.log("🚀 ~ PropertyCard");
   // RENDER
   return (
@@ -21,7 +27,12 @@ const PropertyCard: React.FC<PropsType> = ({}) => {
         >
           {liked ? <FaHeart size={20} color="red" /> : <FaRegHeart size={20} />}
         </i>
-        <img src="/images/image.png" alt="" width="100%" />
+        <img
+          src="/images/image.png"
+          alt=""
+          width="100%"
+          onClick={gotoPropertyDetails}
+        />
         <div className="">
           <i className="boxRounded dim-7 flexCenterCenter absolute left-4 top-40 shadow">
             <LuChevronLeft onClick={onPrevSlide} />
@@ -42,7 +53,10 @@ const PropertyCard: React.FC<PropsType> = ({}) => {
       </figure>
       <div className="space-y-1 py-2">
         <hgroup className="flexBetween gap-2">
-          <h1 className="font-medium">
+          <h1
+            className="cursor-pointer font-medium hover:underline"
+            onClick={gotoPropertyDetails}
+          >
             North Topsail Beach, North Carolina, US
           </h1>
           <time dateTime="1970-01-01" className="mutedText whitespace-nowrap">
