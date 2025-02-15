@@ -19,7 +19,7 @@ const PropertyCard: React.FC<PropsType> = () => {
   console.log("🚀 ~ PropertyCard");
   // RENDER
   return (
-    <div className="_w-[260px]">
+    <div className="">
       <figure className="relative rounded-full">
         <i
           onClick={toggleLiked}

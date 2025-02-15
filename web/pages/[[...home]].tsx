@@ -8,19 +8,20 @@ const Home: NextPageWithLayout = () => {
   console.log("🚀 ~ Home");
   // RENDER
   return (
-    <main className="">
-      <div className="border-b"></div>
-      <FiltersToolbar />
-      <section className="rootContainer mt-4">
-        <div className="rootWrapper gridOneSix gap-8">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <PropertyCard key={i} />
-          ))}
-        </div>
-      </section>
-      <div className="flexCenterCenter my-10 flex-col space-y-4">
-        <p className="text-lg">Continue exploring new homes</p>
-        <button className="btn">Show more</button>
+    <main className="rootContainer">
+      <div className="rootWrapper">
+        <FiltersToolbar />
+        <section className="mt-4">
+          <div className="gridOneSix gap-8">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <PropertyCard key={i} />
+            ))}
+          </div>
+        </section>
+        <section className="flexCenterCenter my-10 flex-col space-y-4">
+          <p className="text-lg">Continue exploring new homes</p>
+          <button className="btn">Show more</button>
+        </section>
       </div>
     </main>
   );

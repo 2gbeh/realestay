@@ -8,13 +8,17 @@ import { useRouterFacade } from "@/hooks/useRouterFacade";
 
 const GuestLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const { routeIs, shallowPush } = useRouterFacade();
+  const isHomePath = routeIs("/");
   console.log("🚀 ~ GuestLayout");
   // RENDER
   return (
     <>
-      {routeIs("/") && <Banner />}
+      {/* BANNER */}
+      {isHomePath && <Banner />}
+
+      {/* HEADER */}
       <Header>
-        {routeIs("/") ? (
+        {isHomePath ? (
           <nav className="flexCenterCenter flex-1 gap-4 font-medium">
             <button onClick={() => shallowPush({ forRent: true })}>
               For Rent
@@ -30,8 +34,15 @@ const GuestLayout: React.FC<PropsWithChildren> = ({ children }) => {
           <SearchBar compact />
         )}
       </Header>
-      {routeIs("/") && <SearchBar />}
+
+      {/* SEARCH BAR */}
+      {isHomePath && <SearchBar />}
+
+      {/* MAIN */}
+      <div className="border-b"></div>
       {children}
+
+      {/* FOOTER */}
       <Footer extended />
     </>
   );

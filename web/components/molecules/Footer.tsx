@@ -25,7 +25,7 @@ const Footer: React.FC<PropsType> = ({ extended }) => {
           <section className="flexCenterBetween border-t border-gray-300 py-5">
             <div className="flexCenter gap-2">
               <address className="font-medium">
-                {APP.copyright}
+                &copy; {APP.copyright}
               </address>
               <Link href="" className="hover:underline">
                 Terms

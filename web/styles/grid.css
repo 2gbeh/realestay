@@ -1,6 +1,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .gridTwo {
+    @apply grid grid-cols-2
+  }
+
   .gridOneTwo {
     @apply grid md:grid-cols-1 lg:grid-cols-2
   }

@@ -23,39 +23,37 @@ const FiltersToolbar: React.FC<PropsType> = () => {
   console.log("🚀 ~ FiltersToolbar");
   // RENDER
   return (
-    <section className="rootContainer">
-      <div className="rootWrapper flexCenterBetween gap-10 py-5">
-        <ul className="flexCenterBetween flex-1 gap-10">
-          {filters.map((item, i) => (
-            <li
-              key={i}
-              className={clsx(
-                "flexColCenter mutedText hover:mutedBorder cursor-pointer gap-1 border-b-2 pb-2 font-medium hover:text-black",
-                item?.active ? "border-black" : "border-transparent",
-              )}
+    <section className="flexCenterBetween gap-10 py-5">
+      <ul className="flexCenterBetween flex-1 gap-10">
+        {filters.map((item, i) => (
+          <li
+            key={i}
+            className={clsx(
+              "flexColCenter mutedText hover:mutedBorder cursor-pointer gap-1 border-b-2 pb-2 font-medium hover:text-black",
+              item?.active ? "border-black" : "border-transparent",
+            )}
+          >
+            {item.icon}
+            <p
+              className={clsx({
+                "whitespace-nowrap text-sm hover:text-black": true,
+                "text-black": item?.active,
+              })}
             >
-              {item.icon}
-              <p
-                className={clsx({
-                  "whitespace-nowrap text-sm hover:text-black": true,
-                  "text-black": item?.active,
-                })}
-              >
-                {item.label}
-              </p>
-            </li>
-          ))}
-        </ul>
-        <div className="flexCenter gap-5 pb-2">
-          <button className="btnOutline">
-            <LuSettings2 />
-            Filters
-          </button>
-          <button className="btnOutline whitespace-nowrap">
-            Add Caution Fee
-            <Switch defaultChecked={false} color="" size="md" />
-          </button>
-        </div>
+              {item.label}
+            </p>
+          </li>
+        ))}
+      </ul>
+      <div className="flexCenter gap-5 pb-2">
+        <button className="btnOutline">
+          <LuSettings2 />
+          Filters
+        </button>
+        <button className="btnOutline whitespace-nowrap">
+          Add Caution Fee
+          <Switch defaultChecked={false} color="" size="md" />
+        </button>
       </div>
     </section>
   );
