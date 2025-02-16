@@ -16,6 +16,7 @@ import { getGuestLayout } from "@/components/layouts/GuestLayout";
 import Avatar from "@/components/atoms/Avatar";
 import Breadcrumb from "@/components/molecules/Breadcrumb";
 import {
+  PropertyMap,
   AgentProfileCard,
   AgentProfileDetails,
   Policy,
@@ -298,13 +299,7 @@ const PropertyDetails: NextPageWithLayout = () => {
           </section>
           {/*  */}
           <div className="border-t"></div>
-          <section className="space-y-8">
-            <hgroup className="space-y-2">
-              <h2 className="text-xl font-medium">Where you'll be</h2>
-              <p>Garopaba, Santa Catarina, Brazil</p>
-            </hgroup>
-            <img src="/images/map.png" alt="" width="100%" />
-          </section>
+          <PropertyMap />
           {/*  */}
           <div className="border-t"></div>
           <section className="space-y-5">
