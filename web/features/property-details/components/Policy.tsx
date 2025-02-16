@@ -10,24 +10,24 @@ const Policy: React.FC<PropsType> = () => {
   return (
     <section className="space-y-4">
       <h2 className="text-2xl font-medium">Things to know</h2>
-      <div className="flexCenterBetween">
+      <ul className="flexCenterBetween">
         {policies.map((item, i) => (
-          <div className="flex-1 space-y-2" key={i}>
+          <li className="flex-1 space-y-2" key={i}>
             <strong>{item.scope}</strong>
-            <ul className="space-y-2">
+            <ol className="space-y-2">
               {item.terms.map((innerItem, j) => (
                 <li key={j}>{innerItem}</li>
               ))}
-            </ul>
+            </ol>
             <Link
               href={"#/policy/" + item.id}
               className="flexCenter gap-1 font-medium underline"
             >
               Show more <LuChevronRight className="mt-1" />
             </Link>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 };

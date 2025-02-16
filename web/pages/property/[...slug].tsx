@@ -21,6 +21,7 @@ import {
   AgentProfileDetails,
   Policy,
   Reviews,
+  Ratings,
 } from "@/features/property-details";
 
 const PropertyDetails: NextPageWithLayout = () => {
@@ -196,50 +197,9 @@ const PropertyDetails: NextPageWithLayout = () => {
               </div>
             </aside>
           </div>
+          {/* RATINGS */}
           <div className="border-t"></div>
-          <section>
-            <h2 className="flexCenter text-xl font-medium">
-              <LuStar /> 5.0 &bull; 4 reviews
-            </h2>
-            <ul className="flexCenterBetween">
-              {[
-                {
-                  label: "Cleanliness",
-                  value: "5.0",
-                  icon: <LuPackage size={32} />,
-                },
-                {
-                  label: "Accuracy",
-                  value: "5.0",
-                  icon: <LuPackage size={32} />,
-                },
-                {
-                  label: "Check-in",
-                  value: "5.0",
-                  icon: <LuPackage size={32} />,
-                },
-                {
-                  label: "Communication",
-                  value: "5.0",
-                  icon: <LuPackage size={32} />,
-                },
-                {
-                  label: "Location",
-                  value: "5.0",
-                  icon: <LuPackage size={32} />,
-                },
-                { label: "Value", value: "5.0", icon: <LuPackage size={32} /> },
-              ].map((item, i) => (
-                <li key={i} className="flex flex-col gap-4">
-                  <div>
-                    <strong>{item.label}</strong>
-                    <p>{item.value}</p>
-                  </div>
-                  <i>{item.icon}</i>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <Ratings />
           {/* REVIEWS */}
           <div className="border-t"></div>
           <Reviews />
