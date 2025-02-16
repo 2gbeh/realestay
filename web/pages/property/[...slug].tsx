@@ -23,6 +23,8 @@ import {
   Reviews,
   Ratings,
   CheckoutCard,
+  PhotoGallery,
+  Heading,
 } from "@/features/property-details";
 
 const PropertyDetails: NextPageWithLayout = () => {
@@ -33,35 +35,8 @@ const PropertyDetails: NextPageWithLayout = () => {
     <>
       <main className="rootContainer py-10">
         <div className="rootWrapperLg space-y-10">
-          <section className="flexCenterBetween">
-            <h1 className="text-2xl font-medium">
-              Beautiful house, complete and with a hydro tub
-            </h1>
-            <div className="flexCenter gap-5">
-              <i className="flexCenter gap-2 underline">
-                <LuShare />
-                Share
-              </i>
-              <i className="flexCenter gap-2 underline">
-                <LuHeart /> Save
-              </i>
-            </div>
-          </section>
-          <section className="flexCenter gap-2">
-            <figure className="flex-1">
-              <img src="/images/image.png" alt="" width="100%" />
-            </figure>
-            <div className="flex-1 space-y-2">
-              <figure className="flexCenter gap-2">
-                <img src="/images/image.png" alt="" width="100%" />
-                <img src="/images/image.png" alt="" width="100%" />
-              </figure>
-              <figure className="flexCenter gap-2">
-                <img src="/images/image.png" alt="" width="100%" />
-                <img src="/images/image.png" alt="" width="100%" />
-              </figure>
-            </div>
-          </section>
+          <Heading />
+          <PhotoGallery />
           {/*  */}
           <div className="flex gap-20">
             <section className="flex-1">
