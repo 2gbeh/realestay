@@ -15,6 +15,7 @@ import {
 import type { NextPageWithLayout } from "@/types/common.types";
 import { getGuestLayout } from "@/components/layouts/GuestLayout";
 import Avatar from "@/components/atoms/Avatar";
+import Breadcrumb from "@/components/molecules/Breadcrumb";
 
 const PropertyDetails: NextPageWithLayout = () => {
   const router = useRouter();
@@ -143,7 +144,7 @@ const PropertyDetails: NextPageWithLayout = () => {
                 <button className="btnOutline">Show all 33 amenities</button>
               </div>
             </section>
-            <aside className="flex-1 rounded-lg border px-8 py-5 shadow-xl self-start">
+            <aside className="flex-1 self-start rounded-lg border px-8 py-5 shadow-xl">
               <div className="flexEnd gap-1">
                 <h2 className="text-2xl font-medium">$87</h2>
                 <p>night</p>
@@ -431,16 +432,7 @@ const PropertyDetails: NextPageWithLayout = () => {
       </main>
       <section className="rootContainer border-b border-t bg-gray-100">
         <div className="rootWrapperLg py-5">
-          <ul className="flexCenter _text-sm gap-2">
-            {["Airbnb", "Brazil", "State of Santa Catarina", "Garopaba"].map(
-              (item, i) => (
-                <li key={i} className="flexCenter gap-2">
-                  <p key={i}>{item}</p>
-                  <LuChevronRight />
-                </li>
-              ),
-            )}
-          </ul>
+          <Breadcrumb trail={["Airbnb", "Brazil", "State of Santa Catarina", "Garopaba"]} />
         </div>
       </section>
     </>

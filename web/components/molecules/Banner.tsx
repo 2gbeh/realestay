@@ -1,12 +1,14 @@
 import React from "react";
 import TypedLink from "../atoms/TypedLink";
 
-const Banner: React.FC = () => {
+type PropsType = {};
+
+const Banner: React.FC<PropsType> = () => {
   console.log("🚀 ~ Banner");
   // RENDER
   return (
-    <section className="border-b px-5 py-5 text-center bg-lightPrimary dark:bg-darkPrimary">
-      <TypedLink className="font-medium underline text-lightOnPrimary dark:text-darkOnPrimary">
+    <section className="border-b bg-lightPrimary px-5 py-5 text-center dark:bg-darkPrimary">
+      <TypedLink className="font-medium text-lightOnPrimary underline dark:text-darkOnPrimary">
         Donate to help house families displaced by the LA wildfires
       </TypedLink>
     </section>
