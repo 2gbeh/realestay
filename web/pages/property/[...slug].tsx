@@ -1,30 +1,22 @@
 import { useRouter } from "next/router";
-import {
-  LuCalendarFold,
-  LuKeyRound,
-  LuMapPin,
-  LuPackage,
-  LuStar,
-} from "react-icons/lu";
 import type { NextPageWithLayout } from "@/types/common.types";
 import { getGuestLayout } from "@/components/layouts/GuestLayout";
-import Avatar from "@/components/atoms/Avatar";
 import Breadcrumbs from "@/components/molecules/Breadcrumbs";
 //
 import {
   Heading,
   PhotoGallery,
   Summary,
+  AgentSummary,
+  Highlights,
+  Amenities,
   CheckoutCard,
+  Ratings,
+  Reviews,
   PropertyMap,
   AgentProfileCard,
   AgentProfileDetails,
   Policy,
-  Reviews,
-  Ratings,
-  Amenities,
-  Highlights,
-  AgentSummary,
 } from "@/features/property-details";
 
 const PropertyDetails: NextPageWithLayout = () => {
@@ -45,7 +37,6 @@ const PropertyDetails: NextPageWithLayout = () => {
               <Summary />
               <AgentSummary />
               <Highlights />
-              <div className="border-t"></div>
               <Amenities />
             </aside>
             {/* CHECKOUT */}

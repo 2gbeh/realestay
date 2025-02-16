@@ -7,7 +7,7 @@ const Amenities: React.FC<PropsType> = () => {
   console.log("🚀 ~ Amenities");
   // RENDER
   return (
-    <div>
+    <div className="border-t">
       <h1>What this place offers</h1>
       <ul className="gridTwo gap-3">
         {[
