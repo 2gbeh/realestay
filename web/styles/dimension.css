@@ -44,4 +44,32 @@
   .dim-10 {
     @apply w-10 h-10
   }
+
+  .dim-12 {
+    @apply w-12 h-12
+  }
+
+  .dim-16 {
+    @apply w-16 h-16
+  }
+
+  .dim-20 {
+    @apply w-20 h-20
+  }
+
+  .dim-24 {
+    @apply w-24 h-24
+  }
+
+  .dim-28 {
+    @apply w-28 h-28
+  }
+
+  .dim-32 {
+    @apply w-32 h-32
+  }
+
+  .dim-40 {
+    @apply w-40 h-40
+  }
 }

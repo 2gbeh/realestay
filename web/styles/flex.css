@@ -29,6 +29,10 @@
     @apply flex flex-col items-center
   }
 
+  .flexColCenterCenter {
+    @apply flex flex-col items-center justify-center
+  }
+
   .flexColEnd {
     @apply flex flex-col items-end
   }

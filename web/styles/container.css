@@ -29,11 +29,11 @@
     @apply bg-transparent hover:bg-gray-100 hover:text-inherit rounded-full cursor-pointer
   }
 
-  mutedBorder {
+  .mutedBorder {
     @apply border-gray-500
   }
 
-  mutedBg {
+  .mutedBg {
     @apply bg-gray-500
   }
 }
