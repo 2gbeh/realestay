@@ -15,7 +15,11 @@ import type { NextPageWithLayout } from "@/types/common.types";
 import { getGuestLayout } from "@/components/layouts/GuestLayout";
 import Avatar from "@/components/atoms/Avatar";
 import Breadcrumb from "@/components/molecules/Breadcrumb";
-import { Policy } from "@/features/property-details";
+import {
+  AgentProfileCard,
+  AgentProfileDetails,
+  Policy,
+} from "@/features/property-details";
 
 const PropertyDetails: NextPageWithLayout = () => {
   const router = useRouter();
@@ -306,69 +310,8 @@ const PropertyDetails: NextPageWithLayout = () => {
           <section className="space-y-5">
             <h2 className="text-xl font-medium">Meet your host</h2>
             <div className="flex gap-10">
-              <div className="flexColCenterCenter flex-1 rounded-lg border shadow-lg">
-                <figure className="space-y-3">
-                  <div className="relative">
-                    <img
-                      src="/images/my-avatar.png"
-                      alt=""
-                      className="dim-32 rounded-full"
-                    />
-                    <i className="dim-8 flexCenterCenter absolute bottom-2 right-0 rounded-full bg-red-500">
-                      <LuShieldCheck color="white" size={20} />
-                    </i>
-                  </div>
-                  <figcaption className="flexColCenter">
-                    <h1 className="text-3xl font-bold">Emanuel</h1>
-                    <p className="flexCenter gap-1 text-sm">
-                      <LuPackage />
-                      Superhost
-                    </p>
-                  </figcaption>
-                </figure>
-                <ul className="flexCenterBetween mt-5 w-[320]">
-                  <li className="flexColCenter">
-                    <strong className="text-lg">207</strong>
-                    <small>Reviews</small>
-                  </li>
-                  <li className="flexColCenter">
-                    <strong className="text-lg">4.8</strong>
-                    <small>Rating</small>
-                  </li>
-                  <li className="flexColCenter">
-                    <strong className="text-lg">6 years</strong>
-                    <small>Hosting</small>
-                  </li>
-                </ul>
-              </div>
-              <article className="flex-1 space-y-4">
-                <div>
-                  <h3 className="text-lg font-medium">
-                    Fabiana is a Superhost
-                  </h3>
-                  <p className="">
-                    Superhosts are experienced, highly rated hosts who are
-                    committed to providing great stays for guests.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium">Host details</h3>
-                  <p>Response rate: 100%</p>
-                  <p>Responds within an hour</p>
-                </div>
-                <button className="btn">Message host</button>
-                <small className="block">
-                  You can message the host in Chinese, and Airbnb provides a
-                  translation function
-                </small>
-                <div className="flex gap-2 border-t py-5">
-                  <LuMapPin className="mt-1" size={32} />
-                  <small>
-                    To help protect your payment, always use Airbnb to send
-                    money and communicate with hosts.
-                  </small>
-                </div>
-              </article>
+              <AgentProfileCard />
+              <AgentProfileDetails />
             </div>
           </section>
           {/*  */}
