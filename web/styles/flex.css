@@ -1,16 +1,20 @@
 @tailwind utilities;
 
 @layer utilities {
-  .flexBetween {
-    @apply flex justify-between
-  }
-
   .flexCentered {
     @apply flex min-h-screen items-center justify-center
   }
 
   .flexCenter {
     @apply flex items-center
+  }
+
+  .flexEnd {
+    @apply flex items-end
+  }
+
+  .flexStartBetween {
+    @apply flex items-start justify-between
   }
 
   .flexCenterBetween {
@@ -25,15 +29,19 @@
     @apply flex items-center justify-end
   }
 
+  .flexCol {
+    @apply flex flex-col
+  }
+
   .flexColCenter {
     @apply flex flex-col items-center
   }
 
-  .flexColCenterCenter {
-    @apply flex flex-col items-center justify-center
-  }
-
   .flexColEnd {
     @apply flex flex-col items-end
+  }
+
+  .flexColCenterCenter {
+    @apply flex flex-col items-center justify-center
   }
 }

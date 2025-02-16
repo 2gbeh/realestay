@@ -52,7 +52,7 @@ const PropertyCard: React.FC<PropsType> = () => {
         </ul>
       </figure>
       <div className="space-y-1 py-2">
-        <hgroup className="flexBetween gap-2">
+        <hgroup className="flexStartBetween gap-2">
           <h1
             className="cursor-pointer font-medium hover:underline"
             onClick={gotoPropertyDetails}

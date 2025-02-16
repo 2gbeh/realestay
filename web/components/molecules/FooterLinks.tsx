@@ -7,7 +7,7 @@ const FooterLinks: React.FC<PropsType> = () => {
   console.log("🚀 ~ FooterLinks");
   // RENDER
   return (
-    <section className="flexBetween py-16">
+    <section className="flexStartBetween py-16">
       <div className="space-y-2">
         <strong>Support</strong>
         <ul className="space-y-2">
