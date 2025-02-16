@@ -3,9 +3,9 @@ import { LuChevronRight } from "react-icons/lu";
 
 type PropsType = { trail: string[] };
 
-const Breadcrumb: React.FC<PropsType> = ({ trail }) => {
+const Breadcrumbs: React.FC<PropsType> = ({ trail }) => {
   let lastIndex = trail.length - 1;
-  console.log("🚀 ~ Breadcrumb");
+  console.log("🚀 ~ Breadcrumbs");
   // RENDER
   return (
     <ul className="flexCenter gap-2">
@@ -19,4 +19,4 @@ const Breadcrumb: React.FC<PropsType> = ({ trail }) => {
   );
 };
 
-export default React.memo(Breadcrumb);
+export default React.memo(Breadcrumbs);
