@@ -1,9 +1,13 @@
 export { default as AgentProfileCard } from "./components/AgentProfileCard";
 export { default as AgentProfileDetails } from "./components/AgentProfileDetails";
+export { default as AgentSummary } from "./components/AgentSummary";
+export { default as Amenities } from "./components/Amenities";
 export { default as CheckoutCard } from "./components/CheckoutCard";
 export { default as Heading } from "./components/Heading";
+export { default as Highlights } from "./components/Highlights";
 export { default as PhotoGallery } from "./components/PhotoGallery";
 export { default as Policy } from "./components/Policy";
 export { default as PropertyMap } from "./components/PropertyMap";
 export { default as Ratings } from "./components/Ratings";
 export { default as Reviews } from "./components/Reviews";
+export { default as Summary } from "./components/Summary";

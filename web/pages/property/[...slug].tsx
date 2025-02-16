@@ -1,30 +1,30 @@
 import { useRouter } from "next/router";
 import {
   LuCalendarFold,
-  LuChevronDown,
-  LuChevronRight,
-  LuHeart,
   LuKeyRound,
   LuMapPin,
   LuPackage,
-  LuShare,
-  LuShieldCheck,
   LuStar,
 } from "react-icons/lu";
 import type { NextPageWithLayout } from "@/types/common.types";
 import { getGuestLayout } from "@/components/layouts/GuestLayout";
 import Avatar from "@/components/atoms/Avatar";
 import Breadcrumbs from "@/components/molecules/Breadcrumbs";
+//
 import {
+  Heading,
+  PhotoGallery,
+  Summary,
+  CheckoutCard,
   PropertyMap,
   AgentProfileCard,
   AgentProfileDetails,
   Policy,
   Reviews,
   Ratings,
-  CheckoutCard,
-  PhotoGallery,
-  Heading,
+  Amenities,
+  Highlights,
+  AgentSummary,
 } from "@/features/property-details";
 
 const PropertyDetails: NextPageWithLayout = () => {
@@ -35,100 +35,22 @@ const PropertyDetails: NextPageWithLayout = () => {
     <>
       <main className="rootContainer py-10">
         <div className="rootWrapperLg space-y-10">
+          {/* HEADING */}
           <Heading />
+          {/* GALLERY */}
           <PhotoGallery />
-          {/*  */}
-          <div className="flex gap-20">
-            <section className="flex-1">
-              <div className="flex">
-                <div className="flex-1">
-                  <h2 className="text-xl font-medium">
-                    Entire home in Garopaba, Brazil
-                  </h2>
-                  <p className="mutedText">
-                    7 guests &bull; 3 bedrooms &bull; 3 beds &bull; 3 baths
-                  </p>
-                  <div className="flexCenter gap-2">
-                    <LuStar />
-                    5.0 &bull; <span className="underline">4 reviews</span>
-                  </div>
-                </div>
-              </div>
-              {/*  */}
-              <div className="border-b border-t py-5">
-                <figure className="flexCenter gap-5">
-                  <Avatar />
-                  <figcaption className="-space-y-1">
-                    <strong>Hosted by Fabiana</strong>
-                    <p className="mutedText">
-                      Superhost &bull; 6 years hosting
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-              {/*  */}
-              <ul className="space-y-5">
-                <li className="flex gap-5">
-                  <LuKeyRound size={24} />
-                  <hgroup>
-                    <h3 className="font-medium">
-                      Exceptional check-in experience
-                    </h3>
-                    <p className="mutedText">
-                      Recent guests gave the check-in process a 5-star rating.
-                    </p>
-                  </hgroup>
-                </li>
-                <li className="flex gap-5">
-                  <LuMapPin size={24} />
-                  <hgroup>
-                    <h3 className="font-medium">Unbeatable location</h3>
-                    <p className="mutedText">
-                      100% of guests in the past year gave this location a
-                      5-star rating.
-                    </p>
-                  </hgroup>
-                </li>
-                <li className="flex gap-5">
-                  <LuCalendarFold size={24} />
-                  <hgroup>
-                    <h3 className="font-medium">
-                      Free cancellation before Mar 4
-                    </h3>
-                    <p className="mutedText">
-                      Get a full refund if you change your mind.
-                    </p>
-                  </hgroup>
-                </li>
-              </ul>
-              {/*  */}
+          {/* SUMMARY */}
+          <section className="flex gap-20">
+            <aside className="flex-1">
+              <Summary />
+              <AgentSummary />
+              <Highlights />
               <div className="border-t"></div>
-              <div>
-                <h1>What this place offers</h1>
-                <ul className="gridTwo gap-3">
-                  {[
-                    "Kitchen",
-                    "Wifi",
-                    "Dedicated workspace",
-                    "Free parking on premises",
-                    "Pets allowed",
-                    "TV",
-                    "Free washer – In unit",
-                    "Exterior security cameras on property",
-                    "Carbon monoxide alarm",
-                    "Smoke alarm",
-                  ].map((item, i) => (
-                    <li key={i} className="flexCenter gap-2">
-                      <LuPackage />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <button className="btnOutline">Show all 33 amenities</button>
-              </div>
-            </section>
+              <Amenities />
+            </aside>
+            {/* CHECKOUT */}
             <CheckoutCard />
-          </div>
+          </section>
           {/* RATINGS */}
           <div className="border-t"></div>
           <Ratings />
@@ -138,7 +60,7 @@ const PropertyDetails: NextPageWithLayout = () => {
           {/* GOOGLE MAP */}
           <div className="border-t"></div>
           <PropertyMap />
-          {/* AGENT CARD */}
+          {/* AGENT PROFILE */}
           <div className="border-t"></div>
           <section className="space-y-5">
             <h2 className="text-xl font-medium">Meet your host</h2>
