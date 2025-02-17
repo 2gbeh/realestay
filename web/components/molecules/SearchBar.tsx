@@ -10,7 +10,7 @@ const SearchBar: React.FC<PropsType> = ({ compact }) => {
   // RENDER
   return compact ? (
     <div className="flexCenterCenter debug_">
-      <div className="flexCenterBetween w-[320px] rounded-full border shadow">
+      <div className="flexCenterBetween w-[480px] rounded-full border shadow">
         <input
           type="search"
           placeholder="Search ( / )"

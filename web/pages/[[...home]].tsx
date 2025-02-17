@@ -17,7 +17,7 @@ const Home: NextPageWithLayout = () => {
             ))}
           </div>
         </section>
-        <section className="flexCenterCenter my-10 flex-col space-y-4">
+        <section className="flexCenterCenter my-20 flex-col space-y-4">
           <p className="text-lg">Continue exploring new homes</p>
           <button className="btn">Show more</button>
         </section>

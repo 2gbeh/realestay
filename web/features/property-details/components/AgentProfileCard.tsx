@@ -7,7 +7,7 @@ const AgentProfileCard: React.FC<PropsType> = () => {
   console.log("🚀 ~ AgentProfileCard");
   // RENDER
   return (
-    <div className="flexColCenterCenter flex-1 rounded-lg border shadow-lg">
+    <aside className="flexColCenterCenter flex-1 rounded-lg border shadow-lg">
       <figure className="space-y-3">
         <div className="relative">
           <img
@@ -41,7 +41,7 @@ const AgentProfileCard: React.FC<PropsType> = () => {
           <small>Hosting</small>
         </li>
       </ul>
-    </div>
+    </aside>
   );
 };
 

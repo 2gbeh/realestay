@@ -6,7 +6,7 @@ import type {
   NextPageWithLayout,
 } from "@/types/common.types";
 //
-import { useDashboardCatchAll } from "@/features/dashboard/hooks/useDashboardCatchAll";
+import { useDashboardCatchAll } from "@/features/wip/dashboard/hooks/useDashboardCatchAll";
 import { APP } from "@/constants/APP";
 
 type ReturnType = PagePropsType & {

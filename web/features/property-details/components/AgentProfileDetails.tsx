@@ -7,7 +7,7 @@ const AgentProfileDetails: React.FC<PropsType> = () => {
   console.log("🚀 ~ AgentProfileDetails");
   // RENDER
   return (
-    <div className="flex-1 space-y-4">
+    <aside className="flex-1 space-y-4">
       <div>
         <h3 className="text-lg font-medium">Fabiana is a Superhost</h3>
         <p className="">
@@ -32,7 +32,7 @@ const AgentProfileDetails: React.FC<PropsType> = () => {
           communicate with hosts.
         </small>
       </div>
-    </div>
+    </aside>
   );
 };
 

@@ -5,8 +5,8 @@ import type {
   NextPageWithLayout,
 } from "@/types/common.types";
 //
-import TodoListItem from "@/components/molecules/todos/TodoListItem";
-import { useDashboard } from "@/features/dashboard/hooks/useDashboard";
+import TodoListItem from "@/components/wip/todos/TodoListItem";
+import { useDashboard } from "@/features/wip/dashboard/hooks/useDashboard";
 
 export const getStaticProps: GetStaticProps<PagePropsType> = async () => {
   return { props: { title: "Dashboard" } };

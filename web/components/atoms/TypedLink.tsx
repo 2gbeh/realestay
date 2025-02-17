@@ -11,13 +11,14 @@ type PropsType = PropsWithChildren & {
 
 const TypedLink: React.FC<PropsType> = ({
   children,
-  href = "hash",
+  href,
   ...props
 }) => {
+  let to = href && typeof PATH[href] === "string" ? PATH[href] : PATH.hash;
   console.log("🚀 ~ TypedLink");
   // RENDER
   return (
-    <Link href={PATH[href]} {...props}>
+    <Link href={to} {...props}>
       {children}
     </Link>
   );
