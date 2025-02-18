@@ -55,8 +55,8 @@ const CheckoutCard: React.FC<PropsType> = () => {
           <span>$570</span>
         </div>
       </div>
-      <div className="flexCenter mt-6 gap-4 rounded-xl border px-4 py-4">
-        <MdDiamond size={48} />
+      <div className="flex mt-6 gap-2 rounded-xl border px-4 py-4">
+        <MdDiamond size={36} />
         <hgroup className="flexCol">
           <h4 className="font-medium">This is a rare find</h4>
           <p className="mutedText text-sm">

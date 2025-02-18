@@ -9,7 +9,7 @@ export function usePropertyCard() {
   const toggleLiked = () => setLiked((prev) => !prev);
   const onPrevSlide = () => setSlide((prev) => (slide > 0 ? prev - 1 : 4));
   const onNextSlide = () => setSlide((prev) => (slide < 4 ? prev + 1 : 0));
-  const gotoPropertyDetails = () => router.push(PATH.property_(100));
+  const gotoPropertyDetails = () => router.push(PATH.propertyId(100));
 
   return {
     liked,

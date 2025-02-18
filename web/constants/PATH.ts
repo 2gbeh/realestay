@@ -3,9 +3,10 @@ export type PathType = keyof typeof PATH;
 export const PATH = {
   hash: "#",
   home: "/",
+  login: "/en/login",
+  register: "/en/register",
   property: "/en/property",
-  property_: (id: unknown) => `/en/property/${id}`,
-  agentLogin: "/en/agent/login",
+  propertyId: (id: unknown) => `/en/property/${id}`,
   // login: "/login",
   // register: "/register",
   // verifyEmail: "/verify-email",

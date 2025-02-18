@@ -18,7 +18,15 @@
   }
 
   .rootWrapperSm {
+    @apply w-full sm:w-[640px]
+  }
+
+  .rootWrapper480 {
     @apply w-full sm:w-[480px]
+  }
+
+  .rootWrapper320 {
+    @apply w-full sm:w-[320px]
   }
 
   .boxRounded {

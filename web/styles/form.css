@@ -1,6 +1,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .inputAuth {
+    @apply border px-4 py-4 rounded-lg w-full border-black
+  }
+
   .btn {
     @apply bg-lightPrimary px-6 py-3 rounded-md text-lightOnPrimary font-medium transition-all
   }

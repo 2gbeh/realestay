@@ -22,8 +22,10 @@ html {
 i,
 em,
 var,
+span,
 address {
   font-style: normal;
+  display: inline-block;
 }
 
 label {
