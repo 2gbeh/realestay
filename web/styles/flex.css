@@ -33,6 +33,10 @@
     @apply flex flex-col
   }
 
+  .flexColCentered {
+    @apply flex flex-col min-h-screen items-center justify-center
+  }
+
   .flexColCenter {
     @apply flex flex-col items-center
   }

@@ -2,7 +2,7 @@
 
 @layer utilities {
   .inputAuth {
-    @apply border px-4 py-4 rounded-lg w-full border-black
+    @apply border px-4 py-2.5 rounded-lg w-full border-black
   }
 
   .btn {
