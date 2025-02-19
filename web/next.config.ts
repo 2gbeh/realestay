@@ -7,16 +7,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/login",
-        destination: PATH.login,
-        permanent: false,
-      },
-      {
-        source: "/register",
-        destination: PATH.register,
-        permanent: false,
-      },
-      {
         source: PATH.property,
         destination: PATH.home,
         permanent: false,
